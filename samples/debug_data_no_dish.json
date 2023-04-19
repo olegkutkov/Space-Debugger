@@ -1,0 +1,260 @@
+{
+  "dish": {
+    "reachable": false,
+    "service": "dish",
+    "cloud": false,
+    "features": {},
+    "timestamp": 1681152699
+  },
+  "router": {
+    "reachable": false,
+    "service": "router",
+    "cloud": false,
+    "features": {},
+    "timestamp": 1681152699,
+    "metadata": {
+      "endpoint": "http://192.168.1.1:9001",
+      "endpoints": [
+        "http://starlinkrouter:9001",
+        "http://192.168.1.1:9001"
+      ]
+    }
+  },
+  "device": {
+    "app": {
+      "version": "2023.11.0",
+      "environment": "production",
+      "build": "2000004507",
+      "hash": "",
+      "timestamp": 1679439344,
+      "features": [
+        "cloud",
+        "account",
+        "messages",
+        "setup",
+        "local_management"
+      ]
+    },
+    "platform": {
+      "os": "ios",
+      "version": "16.4"
+    },
+    "timestamp": 1681152699,
+    "uptime": 0,
+    "wifi": {
+      "ipAddress": "0.0.0.0"
+    },
+    "sensors": {
+      "magnetometer": {
+        "active": false,
+        "available": true
+      },
+      "accelerometer": {
+        "active": false,
+        "available": true
+      },
+      "motion": {
+        "active": false,
+        "available": true
+      },
+      "gyro": {
+        "active": false,
+        "available": true
+      }
+    },
+    "memory": 5918556160,
+    "name": "iPhone",
+    "model": "iPhone 14 Pro",
+    "deviceId": "iPhone15,2",
+    "network": {
+      "vpn": false,
+      "netinfo": {
+        "type": "none",
+        "isConnected": false,
+        "details": {},
+        "isInternetReachable": false
+      },
+      "gatewayIp": null
+    }
+  },
+  "speedTestHistory": [
+    {
+      "id": "3AE87FA3",
+      "type": "client",
+      "downloadMbps": 141.01333333333332,
+      "uploadMbps": 9.460526315789474,
+      "latencyMs": 58.5,
+      "metadata": {
+        "starlink_dish_connected": true,
+        "starlink_dish_hardware_version": "v2",
+        "starlink_router_connected": true,
+        "starlink_router_software_version": "2023.01.0.mr20760",
+        "starlink_router_hardware_version": "v2",
+        "device_mac_address": "02:00:00:00:00:00",
+        "channel_width": 80,
+        "band": "RF_5GHZ",
+        "tx_rate": 780,
+        "rx_rate": 520,
+        "snr": 25,
+        "spatial_streams": 2,
+        "router_country": "",
+        "iface": 3,
+        "router_mac_address": "74:24:9f:b8:ff:50"
+      },
+      "isFallback": false,
+      "timestamp": "2023-02-11T10:53:21.260Z"
+    },
+    {
+      "id": "02821762",
+      "type": "client",
+      "downloadMbps": 111.01282051282051,
+      "uploadMbps": 6.4974358974358974,
+      "latencyMs": 46,
+      "metadata": {
+        "starlink_dish_connected": true,
+        "starlink_dish_hardware_version": "v2",
+        "starlink_router_connected": true,
+        "starlink_router_software_version": "2023.01.0.mr20760",
+        "starlink_router_hardware_version": "v2",
+        "device_mac_address": "02:00:00:00:00:00",
+        "channel_width": 80,
+        "band": "RF_5GHZ",
+        "tx_rate": 866,
+        "rx_rate": 866,
+        "snr": 47,
+        "spatial_streams": 2,
+        "router_country": "",
+        "iface": 3,
+        "router_mac_address": "74:24:9f:b8:ff:50"
+      },
+      "isFallback": false,
+      "timestamp": "2023-02-11T09:31:20.374Z"
+    },
+    {
+      "id": "BB617AAD",
+      "type": "client",
+      "downloadMbps": 163.9975,
+      "uploadMbps": 7.961538461538462,
+      "latencyMs": 46,
+      "metadata": {
+        "starlink_dish_connected": true,
+        "starlink_dish_hardware_version": "v2",
+        "starlink_router_connected": true,
+        "starlink_router_software_version": "2023.03.0.mr21130",
+        "starlink_router_hardware_version": "v2",
+        "device_mac_address": "02:00:00:00:00:00",
+        "channel_width": 80,
+        "band": "RF_5GHZ",
+        "tx_rate": 650,
+        "rx_rate": 520,
+        "snr": 25,
+        "spatial_streams": 2,
+        "router_country": "UA",
+        "iface": 3,
+        "router_mac_address": "74:24:9f:ba:10:e8"
+      },
+      "isFallback": false,
+      "timestamp": "2023-02-02T00:46:13.721Z"
+    },
+    {
+      "id": "59D70082",
+      "type": "wifi",
+      "downloadMbps": 418.35,
+      "uploadMbps": 452.12,
+      "metadata": {
+        "starlink_dish_connected": true,
+        "starlink_dish_hardware_version": "v2",
+        "starlink_router_connected": true,
+        "starlink_router_software_version": "2023.03.0.mr21130",
+        "starlink_router_hardware_version": "v2",
+        "device_mac_address": "02:00:00:00:00:00",
+        "channel_width": 80,
+        "band": "RF_5GHZ",
+        "tx_rate": 780,
+        "rx_rate": 650,
+        "snr": 26,
+        "spatial_streams": 2,
+        "router_country": "UA",
+        "iface": 3,
+        "router_mac_address": "74:24:9f:ba:10:e8"
+      },
+      "timestamp": "2023-02-02T00:43:19.347Z"
+    },
+    {
+      "id": "59D70082",
+      "type": "router",
+      "downloadMbps": 152.50907258064515,
+      "uploadMbps": 6.283266129032258,
+      "metadata": {
+        "starlink_dish_connected": true,
+        "starlink_dish_hardware_version": "v2",
+        "starlink_router_connected": true,
+        "starlink_router_software_version": "2023.03.0.mr21130",
+        "starlink_router_hardware_version": "v2",
+        "device_mac_address": "02:00:00:00:00:00",
+        "channel_width": 80,
+        "band": "RF_5GHZ",
+        "tx_rate": 780,
+        "rx_rate": 468,
+        "snr": 25,
+        "spatial_streams": 2,
+        "router_country": "UA",
+        "iface": 3,
+        "router_mac_address": "74:24:9f:ba:10:e8"
+      },
+      "timestamp": "2023-02-02T00:42:49.281Z"
+    },
+    {
+      "id": "59D70082",
+      "type": "client",
+      "downloadMbps": 0,
+      "uploadMbps": 1.2727272727272727,
+      "latencyMs": 38.5,
+      "metadata": {
+        "starlink_dish_connected": true,
+        "starlink_dish_hardware_version": "v2",
+        "starlink_router_connected": true,
+        "starlink_router_software_version": "2023.03.0.mr21130",
+        "starlink_router_hardware_version": "v2",
+        "device_mac_address": "02:00:00:00:00:00",
+        "channel_width": 80,
+        "band": "RF_5GHZ",
+        "tx_rate": 780,
+        "rx_rate": 468,
+        "snr": 26,
+        "spatial_streams": 2,
+        "router_country": "UA",
+        "iface": 3,
+        "router_mac_address": "74:24:9f:ba:10:e8"
+      },
+      "isFallback": false,
+      "timestamp": "2023-02-02T00:42:05.625Z"
+    },
+    {
+      "id": "AC377062",
+      "type": "client",
+      "downloadMbps": 178.775,
+      "uploadMbps": 8.468354430379748,
+      "latencyMs": 56.5,
+      "metadata": {
+        "starlink_dish_connected": true,
+        "starlink_dish_hardware_version": "v2",
+        "starlink_router_connected": true,
+        "starlink_router_software_version": "2022.25.0.mr15341",
+        "starlink_router_hardware_version": "v2",
+        "device_mac_address": "02:00:00:00:00:00",
+        "channel_width": 80,
+        "band": "RF_5GHZ",
+        "tx_rate": 866,
+        "rx_rate": 866,
+        "snr": 48,
+        "spatial_streams": 2,
+        "router_country": "",
+        "iface": 3
+      },
+      "isFallback": false,
+      "timestamp": "2023-01-15T00:05:25.354Z"
+    }
+  ],
+  "meshNodes": []
+}

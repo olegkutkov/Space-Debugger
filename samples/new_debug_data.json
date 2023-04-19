@@ -1,0 +1,122 @@
+{
+  "device": {
+    "app": {
+      "version": "2.0.31",
+      "environment": "production",
+      "build": "12134",
+      "hash": "9b904f2",
+      "timestamp": 1652745219,
+      "features": [
+        "local_management"
+      ]
+    },
+    "platform": {
+      "os": "web"
+    },
+    "timestamp": 1680434666,
+    "uptime": 553,
+    "wifi": {
+      "ipAddress": "unknown",
+      "ssid": null
+    },
+    "sensors": {},
+    "memory": -1,
+    "name": "unknown",
+    "model": "unknown",
+    "deviceId": "unknown",
+    "network": {
+      "netinfo": {
+        "isInternetReachable": true,
+        "isConnected": true,
+        "type": "other",
+        "details": {
+          "isConnectionExpensive": false
+        }
+      }
+    },
+    "location": {}
+  },
+  "router": {
+    "reachable": false,
+    "service": "router",
+    "cloud": false,
+    "features": {},
+    "timestamp": 1680434661,
+    "metadata": {
+      "endpoint": "http://192.168.1.1:9001",
+      "endpoints": [
+        "http://192.168.1.1:9001"
+      ]
+    }
+  },
+  "dish": {
+    "reachable": true,
+    "service": "dish",
+    "cloud": false,
+    "features": {
+      "stowRequested": true,
+      "unstow": true
+    },
+    "timestamp": 1680434667,
+    "deviceInfo": {
+      "id": "ut01000000-00000000-00205071",
+      "hardwareVersion": "rev2_proto3",
+      "softwareVersion": "a28232ed-57fa-4c72-9de7-7757efd59a39.uterm.release",
+      "manufacturedVersion": "",
+      "countryCode": "UA",
+      "utcOffsetS": 7201,
+      "softwarePartitionsEqual": false,
+      "isDev": false,
+      "bootcount": 358,
+      "antiRollbackVersion": 0,
+      "isHitl": false
+    },
+    "deviceState": {
+      "uptimeS": 510
+    },
+    "alerts": {
+      "motorsStuck": false,
+      "thermalThrottle": false,
+      "thermalShutdown": false,
+      "mastNotNearVertical": false,
+      "unexpectedLocation": true,
+      "slowEthernetSpeeds": false,
+      "roaming": true,
+      "installPending": false,
+      "isHeating": true
+    },
+    "outage": {
+      "cause": 4,
+      "startTimestampNs": 1364469882660152300,
+      "durationNs": 940011051,
+      "didSwitch": false
+    },
+    "gpsStats": {
+      "gpsValid": true,
+      "gpsSats": 11
+    },
+    "secondsToFirstNonemptySlot": 0,
+    "popPingDropRate": 1,
+    "downlinkThroughputBps": 0,
+    "uplinkThroughputBps": 13925.0888671875,
+    "popPingLatencyMs": 78.19999694824219,
+    "obstructionStats": {
+      "currentlyObstructed": false,
+      "fractionObstructed": 0,
+      "validS": 0,
+      "wedgeFractionObstructedList": [],
+      "wedgeAbsFractionObstructedList": [],
+      "avgProlongedObstructionDurationS": 0,
+      "avgProlongedObstructionIntervalS": null,
+      "avgProlongedObstructionValid": false
+    },
+    "stowRequested": false,
+    "boresightAzimuthDeg": 0,
+    "boresightElevationDeg": 0,
+    "ethSpeedMbps": 1000,
+    "mobilityClass": 2,
+    "isSnrAboveNoiseFloor": true
+  },
+  "meshNodes": [],
+  "wifiConfig": {}
+}

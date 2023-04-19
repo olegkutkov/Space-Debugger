@@ -1,0 +1,11 @@
+{
+  "dish": {
+    "reachable": true,
+    "service": "dish",
+    "cloud": false,
+    "features": {
+      "stowRequested": true,
+      "unstow": true
+    }
+  }
+}

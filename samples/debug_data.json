@@ -1,0 +1,1160 @@
+{
+  "dish": {
+    "reachable": true,
+    "service": "dish",
+    "cloud": false,
+    "features": {
+      "stowRequested": true,
+      "unstow": true,
+      "powerSave": true,
+      "combinedStatus": false
+    },
+    "timestamp": 1680012443,
+    "deviceInfo": {
+      "id": "ut01000000-00000000-003afa48",
+      "hardwareVersion": "rev3_proto2",
+      "softwareVersion": "a28232ed-57fa-4c72-9de7-7757efd59a39.uterm.release",
+      "manufacturedVersion": "",
+      "generationNumber": 1679513423,
+      "countryCode": "",
+      "utcOffsetS": 0,
+      "softwarePartitionsEqual": false,
+      "isDev": false,
+      "bootcount": 46,
+      "antiRollbackVersion": 0,
+      "isHitl": false
+    },
+    "deviceState": {
+      "uptimeS": 113
+    },
+    "alerts": {
+      "motorsStuck": false,
+      "thermalThrottle": false,
+      "thermalShutdown": false,
+      "mastNotNearVertical": false,
+      "unexpectedLocation": false,
+      "slowEthernetSpeeds": false,
+      "roaming": false,
+      "installPending": false,
+      "isHeating": false,
+      "powerSupplyThermalThrottle": false,
+      "isPowerSaveIdle": false,
+      "movingWhileNotMobile": false,
+      "movingFastWhileNotAviation": false
+    },
+    "outage": {
+      "cause": 1,
+      "startTimestampNs": -1,
+      "durationNs": 0,
+      "didSwitch": false
+    },
+    "gpsStats": {
+      "gpsValid": false,
+      "gpsSats": 0,
+      "noSatsAfterTtff": false
+    },
+    "secondsToFirstNonemptySlot": -1,
+    "popPingDropRate": 1,
+    "downlinkThroughputBps": 0,
+    "uplinkThroughputBps": 18538.82421875,
+    "popPingLatencyMs": -1,
+    "obstructionStats": {
+      "currentlyObstructed": false,
+      "fractionObstructed": 0,
+      "timeObstructed": 0,
+      "validS": 0,
+      "avgProlongedObstructionDurationS": 0,
+      "avgProlongedObstructionIntervalS": null,
+      "avgProlongedObstructionValid": false
+    },
+    "stowRequested": false,
+    "boresightAzimuthDeg": 0,
+    "boresightElevationDeg": 0,
+    "ethSpeedMbps": 1000,
+    "mobilityClass": 0,
+    "isSnrAboveNoiseFloor": false,
+    "readyStates": {
+      "cady": true,
+      "scp": true,
+      "l1l2": true,
+      "xphy": true,
+      "aap": true,
+      "rf": true
+    },
+    "classOfService": 0,
+    "softwareUpdateState": 1,
+    "isSnrPersistentlyLow": false,
+    "hasActuators": 1,
+    "disablementCode": 0
+  },
+  "dishSoftwareVersionInfo": {
+    "versionNumber": null,
+    "criticallyOutdated": false,
+    "needsUpdate": false
+  },
+  "isLocalRouterOwner": true,
+  "isLocalDishOwner": true,
+  "router": {
+    "reachable": true,
+    "service": "router",
+    "cloud": false,
+    "features": {
+      "speedTest": true,
+      "speedTestLive": true,
+      "wifiSpeedTest": true,
+      "clientHistory": true,
+      "combinedStatus": false
+    },
+    "timestamp": 1680012443,
+    "deviceInfo": {
+      "id": "Router-0100000000000000004AD585",
+      "hardwareVersion": "v2",
+      "softwareVersion": "2023.06.0.mr21796",
+      "manufacturedVersion": "2022.25.0.mr15341",
+      "generationNumber": 0,
+      "countryCode": "UA",
+      "utcOffsetS": 0,
+      "softwarePartitionsEqual": true,
+      "isDev": false,
+      "bootcount": 54,
+      "antiRollbackVersion": 1,
+      "isHitl": false,
+      "boot": {
+        "countByReasonMap": [
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            46
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "countByReasonDeltaMap": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "lastReason": 2,
+        "lastCount": 54
+      }
+    },
+    "deviceState": {
+      "uptimeS": 154
+    },
+    "captivePortalEnabled": false,
+    "ipv4WanAddress": "192.168.100.100",
+    "pingDropRate": 1,
+    "pingLatencyMs": null,
+    "dishPingDropRate": 0,
+    "dishPingLatencyMs": 0.949999988079071,
+    "popPingDropRate": 1,
+    "popPingLatencyMs": null,
+    "alerts": {
+      "thermalThrottle": false,
+      "installPending": false,
+      "freshlyFused": false,
+      "lanEthSlowLink10": false,
+      "lanEthSlowLink100": false,
+      "wanEthPoorConnection": false,
+      "meshTopologyChangingOften": false,
+      "meshUnreliableBackhaul": false
+    },
+    "isAviation": false,
+    "config": {
+      "countryCode": "UA",
+      "pinCountryCode": false,
+      "customPowerTable": false,
+      "setupComplete": true,
+      "applySetupComplete": false,
+      "version": 0,
+      "macWan": "74:24:9F:CA:D5:85",
+      "macLan": "74:24:9F:DA:D5:85",
+      "channel2ghz": 0,
+      "applyChannel2ghz": false,
+      "channel5ghz": 0,
+      "applyChannel5ghz": false,
+      "channel5ghzHigh": 0,
+      "applyChannel5ghzHigh": false,
+      "meshConfigsMap": [],
+      "meshConfigsUpdatesMap": [],
+      "applyMeshConfigs": false,
+      "dynamicKeysList": [],
+      "applyDynamicKeys": false,
+      "isRepeater": false,
+      "applyIsRepeater": false,
+      "apMode": false,
+      "applyApMode": false,
+      "isAviation": false,
+      "applyIsAviation": false,
+      "bootCount": 54,
+      "boot": {
+        "countByReasonMap": [
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            46
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "countByReasonDeltaMap": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "lastReason": 2,
+        "lastCount": 54
+      },
+      "nameserversList": [],
+      "applyNameservers": false,
+      "secureDns": false,
+      "applySecureDns": false,
+      "bypassMode": false,
+      "applyBypassMode": false,
+      "dfsEnabled": false,
+      "applyDfsEnabled": false,
+      "disableMeshOnboarding": false,
+      "applyDisableMeshOnboarding": false,
+      "networksList": [
+        {
+          "ipv4": "192.168.1.1/24",
+          "dhcpv4Start": 20,
+          "domain": "lan",
+          "basicServiceSetsList": [
+            {
+              "bssid": "7E:CE:5F:2F:A0:DD",
+              "ssid": "vedmedik",
+              "authWpa2": {
+                "password": "••••••••••"
+              },
+              "band": 2,
+              "ifaceName": "ra0",
+              "disable": false,
+              "hidden": false
+            },
+            {
+              "bssid": "7E:CE:5F:3F:A0:DD",
+              "ssid": "vedmedik",
+              "authWpa2": {
+                "password": "••••••••••"
+              },
+              "band": 5,
+              "ifaceName": "rax0",
+              "disable": false,
+              "hidden": false
+            }
+          ],
+          "clientIsolation": false,
+          "guest": false,
+          "landing": ""
+        }
+      ],
+      "applyNetworks": false,
+      "networkName": "",
+      "applyNetworkName": false,
+      "networkPassword": "",
+      "applyNetworkPassword": false,
+      "lanIpv4": "",
+      "applyLanIpv4": false,
+      "wifiSecurity": 0,
+      "applyWifiSecurity": false,
+      "networkName5ghz": "",
+      "applyNetworkName5ghz": false,
+      "enableRemoteSsh": false,
+      "applyEnableRemoteSsh": false,
+      "lastRemoteSshAccess": 0,
+      "incarnation": 6479975963201348000,
+      "wirelessMode2ghz": 0,
+      "applyWirelessMode2ghz": false,
+      "wirelessMode5ghz": 0,
+      "applyWirelessMode5ghz": false,
+      "wirelessMode5ghzHigh": 0,
+      "applyWirelessMode5ghzHigh": false,
+      "htBandwidth2ghz": 0,
+      "applyHtBandwidth2ghz": false,
+      "htBandwidth5ghz": 0,
+      "applyHtBandwidth5ghz": false,
+      "htBandwidth5ghzHigh": 0,
+      "applyHtBandwidth5ghzHigh": false,
+      "vhtBandwidth": 0,
+      "applyVhtBandwidth": false,
+      "vhtBandwidth5ghzHigh": 0,
+      "applyVhtBandwidth5ghzHigh": false,
+      "usePublicServices": false,
+      "applyUsePublicServices": false,
+      "disableAutomatedSpeedtests": false,
+      "applyDisableAutomatedSpeedtests": false,
+      "enableUmbilicalVlan": false,
+      "applyEnableUmbilicalVlan": false,
+      "clientNamesList": [],
+      "applyClientNames": false,
+      "outdoorMode": false,
+      "applyOutdoorMode": false,
+      "disable2ghz": false,
+      "applyDisable2ghz": false,
+      "disable5ghz": false,
+      "applyDisable5ghz": false,
+      "disable5ghzHigh": false,
+      "applyDisable5ghzHigh": false
+    },
+    "clientsList": [
+      {
+        "name": "Controller",
+        "givenName": "",
+        "domain": "",
+        "macAddress": "74:24:9f:da:d5:85",
+        "ipAddress": "",
+        "signalStrength": 0,
+        "channelWidth": 0,
+        "associatedTimeS": 0,
+        "modeStr": "",
+        "iface": 1,
+        "ifaceName": "",
+        "snr": 0,
+        "psmode": 0,
+        "upstreamMacAddress": "",
+        "role": 3,
+        "deviceId": "Router-0100000000000000004AD585",
+        "swqChecks": 0,
+        "swqChecksNonEmpty": 0,
+        "mibSteerState": 0,
+        "mibSteerMethod": 0,
+        "btmRequests": 0,
+        "btmRequestsSuccess": 0,
+        "steerState": 0,
+        "steerReqSuccessLast1h": 0,
+        "steerReqFailLast1h": 0,
+        "steerReqFailAndDissocLast1h": 0,
+        "dot11vSupport": false,
+        "hopsFromController": 0,
+        "estTxRateMbpsFromController": 0,
+        "estRxRateMbpsFromController": 0,
+        "hardwareVersion": "",
+        "softwareVersion": "",
+        "apiVersion": 0
+      },
+      {
+        "name": "",
+        "givenName": "",
+        "domain": "lan",
+        "macAddress": "c2:a3:e5:72:ca:19",
+        "ipAddress": "192.168.1.232",
+        "signalStrength": -65,
+        "channelWidth": 20,
+        "rxStats": {
+          "bytes": 74956,
+          "countErrors": 0,
+          "phyMode": 2,
+          "nss": 2,
+          "rateMbps": 130,
+          "mcs": 7,
+          "bandwidth": 20,
+          "guardNs": 800,
+          "airtimeFractionLast1s": 0,
+          "sampledPackets": 90,
+          "sampledPacketsRetried": 24,
+          "sampledPacketsDropped": 0
+        },
+        "txStats": {
+          "bytes": 74705,
+          "successBytes": 0,
+          "phyMode": 2,
+          "nss": 2,
+          "rateMbps": 114,
+          "mcs": 5,
+          "bandwidth": 20,
+          "guardNs": 400,
+          "airtimeFractionLast1s": 0
+        },
+        "associatedTimeS": 88,
+        "modeStr": "",
+        "iface": 2,
+        "ifaceName": "ra0",
+        "snr": 29,
+        "psmode": 0,
+        "upstreamMacAddress": "74:24:9f:da:d5:85",
+        "role": 1,
+        "deviceId": "",
+        "swqChecks": 877,
+        "swqChecksNonEmpty": 0,
+        "mibSteerState": 0,
+        "mibSteerMethod": 0,
+        "btmRequests": 0,
+        "btmRequestsSuccess": 0,
+        "steerState": 0,
+        "steerReqSuccessLast1h": 0,
+        "steerReqFailLast1h": 0,
+        "steerReqFailAndDissocLast1h": 0,
+        "dot11vSupport": true,
+        "hopsFromController": 0,
+        "estTxRateMbpsFromController": 0,
+        "estRxRateMbpsFromController": 0,
+        "hardwareVersion": "",
+        "softwareVersion": "",
+        "apiVersion": 0
+      }
+    ],
+    "hasClientIndex": true,
+    "clientIndex": 1,
+    "isAviationConformed": false,
+    "metadata": {
+      "endpoint": "http://starlinkrouter:9001",
+      "endpoints": [
+        "http://starlinkrouter:9001",
+        "http://192.168.1.1:9001",
+        "http://192.168.1.1:9001"
+      ]
+    }
+  },
+  "device": {
+    "app": {
+      "version": "2023.10.0",
+      "environment": "production",
+      "build": "2000004487",
+      "hash": "",
+      "timestamp": 1678838512,
+      "features": [
+        "cloud",
+        "account",
+        "messages",
+        "setup",
+        "local_management",
+        "remote_management",
+        "client_history"
+      ]
+    },
+    "platform": {
+      "os": "ios",
+      "version": "16.3.1"
+    },
+    "timestamp": 1680012443,
+    "uptime": 102,
+    "wifi": {
+      "ipAddress": "192.168.1.232"
+    },
+    "sensors": {
+      "magnetometer": {
+        "active": false,
+        "available": true
+      },
+      "accelerometer": {
+        "active": false,
+        "available": true
+      },
+      "motion": {
+        "active": false,
+        "available": true
+      },
+      "gyro": {
+        "active": false,
+        "available": true
+      }
+    },
+    "auth": {
+      "accessToken": "<len=903>",
+      "refreshToken": "<len=66>",
+      "accessTokenExpirationDate": "2023-03-28T14:20:41Z",
+      "idToken": "<len=778>",
+      "tokenType": "Bearer"
+    },
+    "memory": 3863314432,
+    "name": "iPhone",
+    "model": "iPhone 12 mini",
+    "deviceId": "iPhone13,1",
+    "network": {
+      "vpn": false,
+      "netinfo": {
+        "type": "wifi",
+        "isConnected": true,
+        "details": {
+          "ipAddress": "192.168.1.232",
+          "subnet": "255.255.255.0",
+          "isConnectionExpensive": false
+        },
+        "isInternetReachable": true
+      },
+      "publicIp": "178.133.109.176",
+      "starlink": false,
+      "icpr": false,
+      "gatewayIp": "192.168.1.1"
+    }
+  },
+  "lastReachableDish": {
+    "reachable": true,
+    "service": "dish",
+    "cloud": false,
+    "features": {
+      "stowRequested": true,
+      "unstow": true,
+      "powerSave": true,
+      "combinedStatus": false
+    },
+    "timestamp": 1680012443,
+    "deviceInfo": {
+      "id": "ut01000000-00000000-003afa48",
+      "hardwareVersion": "rev3_proto2",
+      "softwareVersion": "a28232ed-57fa-4c72-9de7-7757efd59a39.uterm.release",
+      "manufacturedVersion": "",
+      "generationNumber": 1679513423,
+      "countryCode": "",
+      "utcOffsetS": 0,
+      "softwarePartitionsEqual": false,
+      "isDev": false,
+      "bootcount": 46,
+      "antiRollbackVersion": 0,
+      "isHitl": false
+    },
+    "deviceState": {
+      "uptimeS": 113
+    },
+    "alerts": {
+      "motorsStuck": false,
+      "thermalThrottle": false,
+      "thermalShutdown": false,
+      "mastNotNearVertical": false,
+      "unexpectedLocation": false,
+      "slowEthernetSpeeds": false,
+      "roaming": false,
+      "installPending": false,
+      "isHeating": false,
+      "powerSupplyThermalThrottle": false,
+      "isPowerSaveIdle": false,
+      "movingWhileNotMobile": false,
+      "movingFastWhileNotAviation": false
+    },
+    "outage": {
+      "cause": 1,
+      "startTimestampNs": -1,
+      "durationNs": 0,
+      "didSwitch": false
+    },
+    "gpsStats": {
+      "gpsValid": false,
+      "gpsSats": 0,
+      "noSatsAfterTtff": false
+    },
+    "secondsToFirstNonemptySlot": -1,
+    "popPingDropRate": 1,
+    "downlinkThroughputBps": 0,
+    "uplinkThroughputBps": 18538.82421875,
+    "popPingLatencyMs": -1,
+    "obstructionStats": {
+      "currentlyObstructed": false,
+      "fractionObstructed": 0,
+      "timeObstructed": 0,
+      "validS": 0,
+      "avgProlongedObstructionDurationS": 0,
+      "avgProlongedObstructionIntervalS": null,
+      "avgProlongedObstructionValid": false
+    },
+    "stowRequested": false,
+    "boresightAzimuthDeg": 0,
+    "boresightElevationDeg": 0,
+    "ethSpeedMbps": 1000,
+    "mobilityClass": 0,
+    "isSnrAboveNoiseFloor": false,
+    "readyStates": {
+      "cady": true,
+      "scp": true,
+      "l1l2": true,
+      "xphy": true,
+      "aap": true,
+      "rf": true
+    },
+    "classOfService": 0,
+    "softwareUpdateState": 1,
+    "isSnrPersistentlyLow": false,
+    "hasActuators": 1,
+    "disablementCode": 0
+  },
+  "lastReachableRouter": {
+    "reachable": true,
+    "service": "router",
+    "cloud": false,
+    "features": {
+      "speedTest": true,
+      "speedTestLive": true,
+      "wifiSpeedTest": true,
+      "clientHistory": true,
+      "combinedStatus": false
+    },
+    "timestamp": 1680012443,
+    "deviceInfo": {
+      "id": "Router-0100000000000000004AD585",
+      "hardwareVersion": "v2",
+      "softwareVersion": "2023.06.0.mr21796",
+      "manufacturedVersion": "2022.25.0.mr15341",
+      "generationNumber": 0,
+      "countryCode": "UA",
+      "utcOffsetS": 0,
+      "softwarePartitionsEqual": true,
+      "isDev": false,
+      "bootcount": 54,
+      "antiRollbackVersion": 1,
+      "isHitl": false,
+      "boot": {
+        "countByReasonMap": [
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            46
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "countByReasonDeltaMap": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "lastReason": 2,
+        "lastCount": 54
+      }
+    },
+    "deviceState": {
+      "uptimeS": 154
+    },
+    "captivePortalEnabled": false,
+    "ipv4WanAddress": "192.168.100.100",
+    "pingDropRate": 1,
+    "pingLatencyMs": null,
+    "dishPingDropRate": 0,
+    "dishPingLatencyMs": 0.949999988079071,
+    "popPingDropRate": 1,
+    "popPingLatencyMs": null,
+    "alerts": {
+      "thermalThrottle": false,
+      "installPending": false,
+      "freshlyFused": false,
+      "lanEthSlowLink10": false,
+      "lanEthSlowLink100": false,
+      "wanEthPoorConnection": false,
+      "meshTopologyChangingOften": false,
+      "meshUnreliableBackhaul": false
+    },
+    "isAviation": false,
+    "config": {
+      "countryCode": "UA",
+      "pinCountryCode": false,
+      "customPowerTable": false,
+      "setupComplete": true,
+      "applySetupComplete": false,
+      "version": 0,
+      "macWan": "74:24:9F:CA:D5:85",
+      "macLan": "74:24:9F:DA:D5:85",
+      "channel2ghz": 0,
+      "applyChannel2ghz": false,
+      "channel5ghz": 0,
+      "applyChannel5ghz": false,
+      "channel5ghzHigh": 0,
+      "applyChannel5ghzHigh": false,
+      "meshConfigsMap": [],
+      "meshConfigsUpdatesMap": [],
+      "applyMeshConfigs": false,
+      "dynamicKeysList": [],
+      "applyDynamicKeys": false,
+      "isRepeater": false,
+      "applyIsRepeater": false,
+      "apMode": false,
+      "applyApMode": false,
+      "isAviation": false,
+      "applyIsAviation": false,
+      "bootCount": 54,
+      "boot": {
+        "countByReasonMap": [
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            46
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "countByReasonDeltaMap": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "lastReason": 2,
+        "lastCount": 54
+      },
+      "nameserversList": [],
+      "applyNameservers": false,
+      "secureDns": false,
+      "applySecureDns": false,
+      "bypassMode": false,
+      "applyBypassMode": false,
+      "dfsEnabled": false,
+      "applyDfsEnabled": false,
+      "disableMeshOnboarding": false,
+      "applyDisableMeshOnboarding": false,
+      "networksList": [
+        {
+          "ipv4": "192.168.1.1/24",
+          "dhcpv4Start": 20,
+          "domain": "lan",
+          "basicServiceSetsList": [
+            {
+              "bssid": "7E:CE:5F:2F:A0:DD",
+              "ssid": "vedmedik",
+              "authWpa2": {
+                "password": "••••••••••"
+              },
+              "band": 2,
+              "ifaceName": "ra0",
+              "disable": false,
+              "hidden": false
+            },
+            {
+              "bssid": "7E:CE:5F:3F:A0:DD",
+              "ssid": "vedmedik",
+              "authWpa2": {
+                "password": "••••••••••"
+              },
+              "band": 5,
+              "ifaceName": "rax0",
+              "disable": false,
+              "hidden": false
+            }
+          ],
+          "clientIsolation": false,
+          "guest": false,
+          "landing": ""
+        }
+      ],
+      "applyNetworks": false,
+      "networkName": "",
+      "applyNetworkName": false,
+      "networkPassword": "",
+      "applyNetworkPassword": false,
+      "lanIpv4": "",
+      "applyLanIpv4": false,
+      "wifiSecurity": 0,
+      "applyWifiSecurity": false,
+      "networkName5ghz": "",
+      "applyNetworkName5ghz": false,
+      "enableRemoteSsh": false,
+      "applyEnableRemoteSsh": false,
+      "lastRemoteSshAccess": 0,
+      "incarnation": 6479975963201348000,
+      "wirelessMode2ghz": 0,
+      "applyWirelessMode2ghz": false,
+      "wirelessMode5ghz": 0,
+      "applyWirelessMode5ghz": false,
+      "wirelessMode5ghzHigh": 0,
+      "applyWirelessMode5ghzHigh": false,
+      "htBandwidth2ghz": 0,
+      "applyHtBandwidth2ghz": false,
+      "htBandwidth5ghz": 0,
+      "applyHtBandwidth5ghz": false,
+      "htBandwidth5ghzHigh": 0,
+      "applyHtBandwidth5ghzHigh": false,
+      "vhtBandwidth": 0,
+      "applyVhtBandwidth": false,
+      "vhtBandwidth5ghzHigh": 0,
+      "applyVhtBandwidth5ghzHigh": false,
+      "usePublicServices": false,
+      "applyUsePublicServices": false,
+      "disableAutomatedSpeedtests": false,
+      "applyDisableAutomatedSpeedtests": false,
+      "enableUmbilicalVlan": false,
+      "applyEnableUmbilicalVlan": false,
+      "clientNamesList": [],
+      "applyClientNames": false,
+      "outdoorMode": false,
+      "applyOutdoorMode": false,
+      "disable2ghz": false,
+      "applyDisable2ghz": false,
+      "disable5ghz": false,
+      "applyDisable5ghz": false,
+      "disable5ghzHigh": false,
+      "applyDisable5ghzHigh": false
+    },
+    "clientsList": [
+      {
+        "name": "Controller",
+        "givenName": "",
+        "domain": "",
+        "macAddress": "74:24:9f:da:d5:85",
+        "ipAddress": "",
+        "signalStrength": 0,
+        "channelWidth": 0,
+        "associatedTimeS": 0,
+        "modeStr": "",
+        "iface": 1,
+        "ifaceName": "",
+        "snr": 0,
+        "psmode": 0,
+        "upstreamMacAddress": "",
+        "role": 3,
+        "deviceId": "Router-0100000000000000004AD585",
+        "swqChecks": 0,
+        "swqChecksNonEmpty": 0,
+        "mibSteerState": 0,
+        "mibSteerMethod": 0,
+        "btmRequests": 0,
+        "btmRequestsSuccess": 0,
+        "steerState": 0,
+        "steerReqSuccessLast1h": 0,
+        "steerReqFailLast1h": 0,
+        "steerReqFailAndDissocLast1h": 0,
+        "dot11vSupport": false,
+        "hopsFromController": 0,
+        "estTxRateMbpsFromController": 0,
+        "estRxRateMbpsFromController": 0,
+        "hardwareVersion": "",
+        "softwareVersion": "",
+        "apiVersion": 0
+      },
+      {
+        "name": "",
+        "givenName": "",
+        "domain": "lan",
+        "macAddress": "c2:a3:e5:72:ca:19",
+        "ipAddress": "192.168.1.232",
+        "signalStrength": -65,
+        "channelWidth": 20,
+        "rxStats": {
+          "bytes": 74956,
+          "countErrors": 0,
+          "phyMode": 2,
+          "nss": 2,
+          "rateMbps": 130,
+          "mcs": 7,
+          "bandwidth": 20,
+          "guardNs": 800,
+          "airtimeFractionLast1s": 0,
+          "sampledPackets": 90,
+          "sampledPacketsRetried": 24,
+          "sampledPacketsDropped": 0
+        },
+        "txStats": {
+          "bytes": 74705,
+          "successBytes": 0,
+          "phyMode": 2,
+          "nss": 2,
+          "rateMbps": 114,
+          "mcs": 5,
+          "bandwidth": 20,
+          "guardNs": 400,
+          "airtimeFractionLast1s": 0
+        },
+        "associatedTimeS": 88,
+        "modeStr": "",
+        "iface": 2,
+        "ifaceName": "ra0",
+        "snr": 29,
+        "psmode": 0,
+        "upstreamMacAddress": "74:24:9f:da:d5:85",
+        "role": 1,
+        "deviceId": "",
+        "swqChecks": 877,
+        "swqChecksNonEmpty": 0,
+        "mibSteerState": 0,
+        "mibSteerMethod": 0,
+        "btmRequests": 0,
+        "btmRequestsSuccess": 0,
+        "steerState": 0,
+        "steerReqSuccessLast1h": 0,
+        "steerReqFailLast1h": 0,
+        "steerReqFailAndDissocLast1h": 0,
+        "dot11vSupport": true,
+        "hopsFromController": 0,
+        "estTxRateMbpsFromController": 0,
+        "estRxRateMbpsFromController": 0,
+        "hardwareVersion": "",
+        "softwareVersion": "",
+        "apiVersion": 0
+      }
+    ],
+    "hasClientIndex": true,
+    "clientIndex": 1,
+    "isAviationConformed": false,
+    "metadata": {
+      "endpoint": "http://starlinkrouter:9001",
+      "endpoints": [
+        "http://starlinkrouter:9001",
+        "http://192.168.1.1:9001",
+        "http://192.168.1.1:9001"
+      ]
+    }
+  },
+  "speedTestHistory": [
+    {
+      "id": "32F2B1FC",
+      "type": "client",
+      "downloadMbps": 169.72592592592594,
+      "uploadMbps": 1.9056603773584906,
+      "latencyMs": 44.5,
+      "metadata": {
+        "starlink_dish_connected": true,
+        "starlink_dish_hardware_version": "v2",
+        "starlink_router_connected": true,
+        "starlink_router_software_version": "2023.06.0.mr21796",
+        "starlink_router_hardware_version": "v2",
+        "channel_width": 80,
+        "band": "RF_5GHZ",
+        "tx_rate": 433,
+        "rx_rate": 433,
+        "snr": 34,
+        "spatial_streams": 1,
+        "router_country": "UA",
+        "iface": 3,
+        "router_mac_address": "74:24:9f:da:d5:85"
+      },
+      "targetType": 1,
+      "timestamp": "2023-03-27T15:08:37.199Z"
+    },
+    {
+      "id": "2E06E2BC",
+      "type": "client",
+      "downloadMbps": 9.704615384615384,
+      "uploadMbps": 7.884057971014493,
+      "latencyMs": 58.5,
+      "metadata": {
+        "starlink_dish_connected": true,
+        "starlink_dish_hardware_version": "v2",
+        "starlink_router_connected": true,
+        "starlink_router_software_version": "2022.25.0.mr15341",
+        "starlink_router_hardware_version": "v2",
+        "device_mac_address": "02:00:00:00:00:00",
+        "channel_width": 80,
+        "band": "RF_5GHZ",
+        "tx_rate": 114,
+        "rx_rate": 156,
+        "snr": 36,
+        "spatial_streams": 2,
+        "router_country": "UA",
+        "iface": 3,
+        "router_mac_address": "74:24:9f:c0:3d:c0"
+      },
+      "isFallback": false,
+      "timestamp": "2023-02-12T15:05:16.552Z"
+    }
+  ],
+  "meshNodes": [
+    {
+      "name": "Controller",
+      "givenName": "",
+      "domain": "",
+      "ipAddress": "",
+      "channelWidth": 0,
+      "associatedTimeS": 0,
+      "modeStr": "",
+      "iface": 1,
+      "ifaceName": "",
+      "snr": 0,
+      "psmode": 0,
+      "role": 3,
+      "deviceId": "Router-0100000000000000004AD585",
+      "swqChecks": 0,
+      "swqChecksNonEmpty": 0,
+      "mibSteerState": 0,
+      "mibSteerMethod": 0,
+      "btmRequests": 0,
+      "btmRequestsSuccess": 0,
+      "steerState": 0,
+      "steerReqSuccessLast1h": 0,
+      "steerReqFailLast1h": 0,
+      "steerReqFailAndDissocLast1h": 0,
+      "dot11vSupport": false,
+      "hopsFromController": 0,
+      "estTxRateMbpsFromController": 0,
+      "estRxRateMbpsFromController": 0,
+      "hardwareVersion": "",
+      "softwareVersion": "",
+      "apiVersion": 0,
+      "signalStrength": 0,
+      "macAddress": "74:24:9f:da:d5:85",
+      "upstreamMacAddress": "",
+      "isMyClient": false
+    }
+  ],
+  "wifiConfig": {
+    "countryCode": "UA",
+    "pinCountryCode": false,
+    "customPowerTable": false,
+    "setupComplete": true,
+    "applySetupComplete": false,
+    "version": 0,
+    "macWan": "74:24:9F:CA:D5:85",
+    "macLan": "74:24:9F:DA:D5:85",
+    "channel2ghz": 0,
+    "applyChannel2ghz": false,
+    "channel5ghz": 0,
+    "applyChannel5ghz": false,
+    "channel5ghzHigh": 0,
+    "applyChannel5ghzHigh": false,
+    "meshConfigsMap": [],
+    "meshConfigsUpdatesMap": [],
+    "applyMeshConfigs": false,
+    "dynamicKeysList": [],
+    "applyDynamicKeys": false,
+    "isRepeater": false,
+    "applyIsRepeater": false,
+    "apMode": false,
+    "applyApMode": false,
+    "isAviation": false,
+    "applyIsAviation": false,
+    "bootCount": 54,
+    "boot": {
+      "countByReasonMap": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          46
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "countByReasonDeltaMap": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "lastReason": 2,
+      "lastCount": 54
+    },
+    "nameserversList": [],
+    "applyNameservers": false,
+    "secureDns": false,
+    "applySecureDns": false,
+    "bypassMode": false,
+    "applyBypassMode": false,
+    "dfsEnabled": false,
+    "applyDfsEnabled": false,
+    "disableMeshOnboarding": false,
+    "applyDisableMeshOnboarding": false,
+    "networksList": [
+      {
+        "ipv4": "192.168.1.1/24",
+        "dhcpv4Start": 20,
+        "domain": "lan",
+        "basicServiceSetsList": [
+          {
+            "bssid": "7E:CE:5F:2F:A0:DD",
+            "ssid": "vedmedik",
+            "authWpa2": {
+              "password": "••••••••••"
+            },
+            "band": 2,
+            "ifaceName": "ra0",
+            "disable": false,
+            "hidden": false
+          },
+          {
+            "bssid": "7E:CE:5F:3F:A0:DD",
+            "ssid": "vedmedik",
+            "authWpa2": {
+              "password": "••••••••••"
+            },
+            "band": 5,
+            "ifaceName": "rax0",
+            "disable": false,
+            "hidden": false
+          }
+        ],
+        "clientIsolation": false,
+        "guest": false,
+        "landing": ""
+      }
+    ],
+    "applyNetworks": false,
+    "networkName": "",
+    "applyNetworkName": false,
+    "networkPassword": "",
+    "applyNetworkPassword": false,
+    "lanIpv4": "",
+    "applyLanIpv4": false,
+    "wifiSecurity": 0,
+    "applyWifiSecurity": false,
+    "networkName5ghz": "",
+    "applyNetworkName5ghz": false,
+    "enableRemoteSsh": false,
+    "applyEnableRemoteSsh": false,
+    "lastRemoteSshAccess": 0,
+    "incarnation": 6479975963201348000,
+    "wirelessMode2ghz": 0,
+    "applyWirelessMode2ghz": false,
+    "wirelessMode5ghz": 0,
+    "applyWirelessMode5ghz": false,
+    "wirelessMode5ghzHigh": 0,
+    "applyWirelessMode5ghzHigh": false,
+    "htBandwidth2ghz": 0,
+    "applyHtBandwidth2ghz": false,
+    "htBandwidth5ghz": 0,
+    "applyHtBandwidth5ghz": false,
+    "htBandwidth5ghzHigh": 0,
+    "applyHtBandwidth5ghzHigh": false,
+    "vhtBandwidth": 0,
+    "applyVhtBandwidth": false,
+    "vhtBandwidth5ghzHigh": 0,
+    "applyVhtBandwidth5ghzHigh": false,
+    "usePublicServices": false,
+    "applyUsePublicServices": false,
+    "disableAutomatedSpeedtests": false,
+    "applyDisableAutomatedSpeedtests": false,
+    "enableUmbilicalVlan": false,
+    "applyEnableUmbilicalVlan": false,
+    "clientNamesList": [],
+    "applyClientNames": false,
+    "outdoorMode": false,
+    "applyOutdoorMode": false,
+    "disable2ghz": false,
+    "applyDisable2ghz": false,
+    "disable5ghz": false,
+    "applyDisable5ghz": false,
+    "disable5ghzHigh": false,
+    "applyDisable5ghzHigh": false
+  }
+}
