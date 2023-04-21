@@ -33,8 +33,7 @@ Just extract the archive and run `space_dbg_start.exe`
 ![](https://raw.githubusercontent.com/olegkutkov/Space-Debugger/main/doc/space-debugger-on-windows.png)
 
 ## Localization
-Space Debugger uses gettext to support different languages. Currently supported languages are English and Ukrainian.
-Translators are welcome! I hope to add Spanish and French.
+Space Debugger uses gettext to support different languages. Currently supported languages: English, Ukrainian and French.
 
 ## Debug data
 Space Debugger show various information about your Dishy, router and local device (used to get the data).
