@@ -1,0 +1,670 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-04-21 23:45+0300\n"
+"PO-Revision-Date: 2023-04-21 23:46+0300\n"
+"Last-Translator: Oleg Kutkov <contact@olegkutkov.me>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: about.py\n"
+"X-Poedit-SearchPath-1: app_data.py\n"
+"X-Poedit-SearchPath-2: common_data.py\n"
+"X-Poedit-SearchPath-3: device_app.py\n"
+"X-Poedit-SearchPath-4: dishy.py\n"
+"X-Poedit-SearchPath-5: dishy_data.py\n"
+"X-Poedit-SearchPath-6: entity.py\n"
+"X-Poedit-SearchPath-7: obstruction_img_gen.py\n"
+"X-Poedit-SearchPath-8: router.py\n"
+"X-Poedit-SearchPath-9: router_data.py\n"
+"X-Poedit-SearchPath-10: space_dbg.py\n"
+"X-Poedit-SearchPath-11: space_dbg_start.py\n"
+
+#: about.py:51
+msgid "About"
+msgstr "A propos"
+
+#: device_app.py:35
+msgid "Failed to load device app info"
+msgstr "Impossible de charger les informations de l'application"
+
+#: device_app.py:39 device_app.py:40 dishy.py:116 dishy.py:117 dishy.py:118
+#: dishy.py:119 dishy.py:120 dishy_data.py:65 dishy_data.py:82
+#: dishy_data.py:107 dishy_data.py:130 dishy_data.py:180 router.py:85
+#: router.py:86 router.py:87 router.py:88 router.py:89 router.py:90
+#: router_data.py:47
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: device_app.py:74
+msgid "Local device"
+msgstr "Appareil local"
+
+#: device_app.py:77
+msgid "App version"
+msgstr "Version de l'application"
+
+#: device_app.py:78
+msgid "App environment"
+msgstr "Environnement de l'application"
+
+#: device_app.py:79
+msgid "App build"
+msgstr "Build de l'application"
+
+#: device_app.py:80
+msgid "App hash"
+msgstr "Hash de l'application"
+
+#: device_app.py:81
+msgid "App timestamp"
+msgstr "Date et heure de l'application"
+
+#: device_app.py:85
+msgid "Platform OS"
+msgstr "Système d'exploitation de la plateforme"
+
+#: device_app.py:88
+msgid "Platform OS version"
+msgstr "Version du système d'exploitation de la plateforme"
+
+#: device_app.py:89
+msgid "Device"
+msgstr "Appareil"
+
+#: device_app.py:90
+msgid "Device model"
+msgstr "Modèle de l'appareil"
+
+#: device_app.py:91
+msgid "Device id"
+msgstr "Id de l'appareil"
+
+#: device_app.py:95
+msgid "Device timestamp"
+msgstr "Date et heure de l'appareil"
+
+#: device_app.py:96
+msgid "Device uptime"
+msgstr "Temps depuis le démarrage"
+
+#: device_app.py:97
+msgid "WiFi IP address"
+msgstr "Adresse IP WiFi"
+
+#: device_app.py:134
+msgid "Connection type"
+msgstr "Type de connexion"
+
+#: device_app.py:135
+msgid "Is VPN"
+msgstr "est un VPN"
+
+#: device_app.py:136
+msgid "Is connected"
+msgstr "est connecté"
+
+#: device_app.py:137
+msgid "Internet available"
+msgstr "Internet disponible"
+
+#: device_app.py:138
+msgid "IP address"
+msgstr "Adresse IP"
+
+#: device_app.py:139
+msgid "Gateway IP address"
+msgstr "Adresse IP de la passerelle"
+
+#: device_app.py:142 dishy.py:179 router.py:138
+msgid "Network"
+msgstr "Réseau"
+
+#: device_app.py:166
+msgid "Available"
+msgstr "Disponible"
+
+#: device_app.py:167
+msgid "Active"
+msgstr "Actif"
+
+#: device_app.py:171
+msgid "Sensors"
+msgstr "Capteurs"
+
+#: dishy.py:42
+msgid "Failed to load Dish Device Info"
+msgstr "Impossible de charger les informations de l'antenne"
+
+#: dishy.py:61
+msgid "Dish"
+msgstr "Antenne"
+
+#: dishy.py:77 router.py:58
+msgid "Hardware revision"
+msgstr "Révision matérielle"
+
+#: dishy.py:78 router.py:60
+msgid "Software version"
+msgstr "Version logicielle"
+
+#: dishy.py:79
+msgid "Software update state"
+msgstr "État de la mise à jour du logiciel"
+
+#: dishy.py:80
+msgid "User terminal ID"
+msgstr "Identifiant du terminal"
+
+#: dishy.py:81 router.py:62
+msgid "Development hardware"
+msgstr "Matériel de développement"
+
+#: dishy.py:82
+msgid "Actuators"
+msgstr "Actuateurs"
+
+#: dishy.py:83
+msgid "Stow requested"
+msgstr "Rangement demandé"
+
+#: dishy.py:86 router.py:61
+msgid "Manufactured version"
+msgstr "Version logicielle originale"
+
+#: dishy.py:88 router.py:71
+msgid "Boot count"
+msgstr "Compteur de démarrage"
+
+#: dishy.py:89 router.py:64
+msgid "Software parts equal"
+msgstr "Partitions logicielles identiques"
+
+#: dishy.py:92 router.py:63
+msgid "Anti-Rollback version"
+msgstr "Version anti retour"
+
+#: dishy.py:97 router.py:67
+msgid "Country code"
+msgstr "Code du pays"
+
+#: dishy.py:98 router.py:68
+msgid "Device date/time"
+msgstr "Date/Heure de l'équipement"
+
+#: dishy.py:99 router.py:69
+msgid "Device timezone"
+msgstr "Fuseau horaire de l'équipement"
+
+#: dishy.py:100 router.py:70
+msgid "Uptime"
+msgstr "Durée de fonctionnement"
+
+#: dishy.py:100 router.py:70
+msgid "seconds"
+msgstr "secondes"
+
+#: dishy.py:104
+msgid "Class of service"
+msgstr "Classe de service"
+
+#: dishy.py:105
+msgid "Mobility class"
+msgstr "Classe mobilité "
+
+#: dishy.py:106
+msgid "Service state"
+msgstr "État du Service"
+
+#: dishy.py:171
+msgid "Ethernet speed"
+msgstr "Vitesse Ethernet"
+
+#: dishy.py:172
+msgid "Downlink Throughput, Kbps"
+msgstr "Débit descendant, Kbps"
+
+#: dishy.py:173
+msgid "Uplink Throughput, Kbps"
+msgstr "Débit montant, Kbps"
+
+#: dishy.py:174 router.py:135
+msgid "PoP ping latency, ms"
+msgstr "Latence du ping vers le PoP, ms"
+
+#: dishy.py:175 router.py:134
+msgid "PoP ping drop rate"
+msgstr "Taux de perte du ping vers le PoP"
+
+#: dishy.py:176
+msgid "Seconds to first non-empty slot"
+msgstr "Secondes jusqu'au prochain slot non-vide"
+
+#: dishy.py:202
+msgid "GPS valid"
+msgstr "GPS valide"
+
+#: dishy.py:203
+msgid "GPS satellites"
+msgstr "Satellites GPS "
+
+#: dishy.py:204
+msgid "No GPS satellites after first fix"
+msgstr "Pas de satellites GPS après le premier fix"
+
+#: dishy.py:207
+msgid "GPS"
+msgstr "GPS"
+
+#: dishy.py:226
+msgid "Signal level"
+msgstr "Niveau de signal"
+
+#: dishy.py:226
+msgid "Good"
+msgstr "Bon"
+
+#: dishy.py:226
+msgid "Bad"
+msgstr "Mauvais"
+
+#: dishy.py:227
+msgid "SNR persistently low"
+msgstr "Signal faible persistant"
+
+#: dishy.py:228
+msgid "Panel boresight Azimuth angle, deg"
+msgstr "Angle en Azimuth du faisceau de l'antenne, deg"
+
+#: dishy.py:229
+msgid "Panel boresight Elevation agngle, deg"
+msgstr "Angle en Élévation du faisceau de l'antenne, deg"
+
+#: dishy.py:232
+msgid "Antenna"
+msgstr "Antenne"
+
+#: dishy.py:258
+msgid "Clock generator"
+msgstr "Générateur d'horloge"
+
+#: dishy.py:259
+msgid "RFFE bus interface"
+msgstr "Interface bus RFFE"
+
+#: dishy.py:260
+msgid "Modem L1L2"
+msgstr "Modem L1L2"
+
+#: dishy.py:261
+msgid "Xilinx XPHY interface"
+msgstr "Interface Xilinx XPHY"
+
+#: dishy.py:262
+msgid "Digital beamformers"
+msgstr "Formation numérique de faisceaux"
+
+#: dishy.py:263
+msgid "RF front end"
+msgstr "Tête RF"
+
+#: dishy.py:266
+msgid "Ready states"
+msgstr "États"
+
+#: dishy.py:290
+msgid "Cause"
+msgstr "Cause"
+
+#: dishy.py:291
+msgid "Start timestamp, ns"
+msgstr "Heure de démarrage, ns"
+
+#: dishy.py:292
+msgid "Duration, ns"
+msgstr "Durée, ns"
+
+#: dishy.py:293
+msgid "Did switch"
+msgstr "A changé de mode"
+
+#: dishy.py:296
+msgid "Outage"
+msgstr "Panne"
+
+#: dishy.py:330
+msgid "Currently obstructed"
+msgstr "Obstruction du signal"
+
+#: dishy.py:331
+msgid "Fraction obstructed"
+msgstr "Taux d'obstruction"
+
+#: dishy.py:332
+msgid "Time obstructed"
+msgstr "Temps obstrué"
+
+#: dishy.py:333
+msgid "Time valid, sec"
+msgstr "Temps valide, sec"
+
+#: dishy.py:334
+msgid "Average prolonged obstruction duration, sec"
+msgstr "Durée moyenne des obstructions prolongées, sec"
+
+#: dishy.py:335
+msgid "Average prolonged obstruction interval, sec"
+msgstr "Intervalle moyen des obstructions prolongées, sec"
+
+#: dishy.py:336
+msgid "Average prolonged obstruction valid"
+msgstr "Données concernant les obstructions prolongées valides"
+
+#: dishy.py:340
+msgid "Obstructions"
+msgstr "Obstructions"
+
+#: dishy_data.py:62
+msgid "Stationary"
+msgstr "Stationnaire"
+
+#: dishy_data.py:63
+msgid "Nomadic"
+msgstr "Nomade"
+
+#: dishy_data.py:64
+msgid "Mobile"
+msgstr "Mobile"
+
+#: dishy_data.py:83
+msgid "Consumer"
+msgstr "Grand public"
+
+#: dishy_data.py:84
+msgid "Business"
+msgstr "Entreprise"
+
+#: dishy_data.py:85
+msgid "Business Plus"
+msgstr "Entreprise plus"
+
+#: dishy_data.py:86
+msgid "Commercial Aviation"
+msgstr "Aviation de ligne"
+
+#: dishy_data.py:108
+msgid "Idle"
+msgstr "Au repos"
+
+#: dishy_data.py:109
+msgid "Fetching"
+msgstr "Chargement"
+
+#: dishy_data.py:110
+msgid "Pre Check"
+msgstr "Pré-vérification"
+
+#: dishy_data.py:111
+msgid "Writing"
+msgstr "Écriture"
+
+#: dishy_data.py:112
+msgid "Post Check"
+msgstr "Post-vérification"
+
+#: dishy_data.py:113
+msgid "Reboot required"
+msgstr "Redémarrage nécessaire"
+
+#: dishy_data.py:114
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: dishy_data.py:115
+msgid "Faulted"
+msgstr "En panne"
+
+#: dishy_data.py:131
+msgid "Has Actuators"
+msgstr "A des actionneurs"
+
+#: dishy_data.py:132
+msgid "No Actuators"
+msgstr "Sans actionneurs"
+
+#: dishy_data.py:150
+msgid "Unknown, presumably active"
+msgstr "Inconnu, potentiellement actif"
+
+#: dishy_data.py:151
+msgid "Okay"
+msgstr "OK"
+
+#: dishy_data.py:152
+msgid "No active account"
+msgstr "Pas de compte actif"
+
+#: dishy_data.py:153
+msgid "Too far from service address"
+msgstr "Trop loin de l'adresse de service"
+
+#: dishy_data.py:154
+msgid "In ocean"
+msgstr "Dans l'océan"
+
+#: dishy_data.py:155
+msgid "Invalid country"
+msgstr "Pays invalide"
+
+#: dishy_data.py:181
+msgid "Booting"
+msgstr "Démarrage"
+
+#: dishy_data.py:182
+msgid "Stowed"
+msgstr "Rangée"
+
+#: dishy_data.py:183
+msgid "Thermal shutdown"
+msgstr "Arrêt pour surchauffe"
+
+#: dishy_data.py:184
+msgid "No schedule"
+msgstr "Pas de calendrier"
+
+#: dishy_data.py:185
+msgid "No satellites"
+msgstr "Pas de satellites"
+
+#: dishy_data.py:186
+msgid "Obstructed"
+msgstr "Obstrué"
+
+#: dishy_data.py:187
+msgid "No downlink"
+msgstr "Pas de lien descendant"
+
+#: dishy_data.py:188
+msgid "No pings"
+msgstr "Pas de ping"
+
+#: dishy_data.py:189
+msgid "Activity of the actuator"
+msgstr "Activité de l'actuateur"
+
+#: dishy_data.py:190
+msgid "Cable test is running"
+msgstr "Test du câble en cours"
+
+#: dishy_data.py:191
+msgid "Sleeping"
+msgstr "En veille"
+
+#: dishy_data.py:192
+msgid "Moving while not allowed"
+msgstr "Déplacement détecté mais interdit"
+
+#: entity.py:43
+msgid "Remote access"
+msgstr "Adresse distante"
+
+#: entity.py:43
+msgid "Local access"
+msgstr "Adresse locale"
+
+#: entity.py:47 entity.py:64
+msgid "Yes"
+msgstr "Oui"
+
+#: entity.py:47 entity.py:64
+msgid "No"
+msgstr "Non"
+
+#: entity.py:115 entity.py:117
+msgid "Alerts"
+msgstr "Alertes"
+
+#: entity.py:115
+msgid "No alerts"
+msgstr "Pas d'alerte"
+
+#: router.py:36
+msgid "Failed to load Router Device Info"
+msgstr "Impossible de charger les informations du routeur"
+
+#: router.py:55
+msgid "Router"
+msgstr "Routeur"
+
+#: router.py:59
+msgid "Router ID"
+msgstr "Identifiant du routeur"
+
+#: router.py:75
+msgid "Aviation"
+msgstr "Aviation"
+
+#: router.py:76
+msgid "Captive portal enabled"
+msgstr "Portail captif activé"
+
+#: router.py:130
+msgid "WAN IPv4"
+msgstr "IPv4 WAN"
+
+#: router.py:131
+msgid "Ping drop rate"
+msgstr "Taux de perte de ping"
+
+#: router.py:132
+msgid "Starlink ping drop rate"
+msgstr "Taux de perte de ping Starlink"
+
+#: router.py:133
+msgid "Starlink ping latency, ms"
+msgstr "Latence du ping Starlink, ms"
+
+#: router.py:163
+msgid "Last reboot reason"
+msgstr "Raison du dernier redémarrage"
+
+#: router.py:164
+msgid "Last boot count"
+msgstr "Compteur de démarrage"
+
+#: router.py:170
+msgid "Reason"
+msgstr "Raison"
+
+#: router.py:171
+msgid "count by this reason"
+msgstr "compteur pour cette raison"
+
+#: router.py:173
+msgid "Boot info"
+msgstr "Informations de démarrage"
+
+#: router_data.py:48
+msgid "Forgotten"
+msgstr "Oublié"
+
+#: router_data.py:49
+msgid "Power cycle"
+msgstr "Redémarrage"
+
+#: router_data.py:50
+msgid "Command"
+msgstr "Commande"
+
+#: router_data.py:51
+msgid "Software update"
+msgstr "Mise à jour logicielle"
+
+#: router_data.py:52
+msgid "Configuration update"
+msgstr "Mise à jour de la configuration"
+
+#: space_dbg.py:197
+msgid "Reachable"
+msgstr "Joignable"
+
+#: space_dbg.py:198
+msgid "Access type"
+msgstr "Type d'accès"
+
+#: space_dbg.py:208
+msgid "copied to clipboard"
+msgstr "copié vers le presse-papiers"
+
+#: space_dbg.py:228
+msgid "Failed to load JSON file"
+msgstr "Erreur lors du chargement du fichier JSON"
+
+#: space_dbg.py:243
+msgid "Error"
+msgstr "Erreur"
+
+#: space_dbg_start.py:60
+msgid "Failed to run Space Debugger"
+msgstr "Impossible d'exécuter Space Debugger"
+
+#: space_dbg_start.py:72
+msgid "Paste debug data JSON text"
+msgstr "Coller une chaîne JSON de données de debug"
+
+#: space_dbg_start.py:89
+msgid "Ok"
+msgstr "Ok"
+
+#: space_dbg_start.py:92
+msgid "Cancel"
+msgstr "Annuler"
+
+#: space_dbg_start.py:119
+msgid "Space Debugger: select data source"
+msgstr "Space Debugger: selectionner une source de données"
+
+#: space_dbg_start.py:128
+msgid "Open JSON file"
+msgstr "Ouvrir un fichier JSON"
+
+#: space_dbg_start.py:133
+msgid "Paste JSON text"
+msgstr "Coller une chaîne JSON"
+
+#: space_dbg_start.py:141
+msgid "JSON files"
+msgstr "fichiers JSON"
+
+#: space_dbg_start.py:141
+msgid "All files"
+msgstr "Tous les fichiers"
+
+#: space_dbg_start.py:142
+msgid "Select JSON file"
+msgstr "Selectionner un fichier JSON"
