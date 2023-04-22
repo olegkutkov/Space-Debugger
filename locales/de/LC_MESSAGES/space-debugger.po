@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-04-21 23:58+0300\n"
-"PO-Revision-Date: 2023-04-21 23:58+0300\n"
+"PO-Revision-Date: 2023-04-22 21:16+0300\n"
 "Last-Translator: Oleg Kutkov <contact@olegkutkov.me>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: about.py:51
 msgid "About"
-msgstr ""
+msgstr "Über"
 
 #: device_app.py:35
 msgid "Failed to load device app info"
-msgstr ""
+msgstr "Anwendungsinformation konnten nicht geladen werden"
 
 #: device_app.py:39 device_app.py:40 dishy.py:116 dishy.py:117 dishy.py:118
 #: dishy.py:119 dishy.py:120 dishy_data.py:65 dishy_data.py:82
@@ -39,319 +39,319 @@ msgstr ""
 #: router.py:86 router.py:87 router.py:88 router.py:89 router.py:90
 #: router_data.py:47
 msgid "Unknown"
-msgstr ""
+msgstr "Unbekannt"
 
 #: device_app.py:74
 msgid "Local device"
-msgstr ""
+msgstr "Lokales Gerät"
 
 #: device_app.py:77
 msgid "App version"
-msgstr ""
+msgstr "Version der Anwendung"
 
 #: device_app.py:78
 msgid "App environment"
-msgstr ""
+msgstr "Umgebung der Anwendung"
 
 #: device_app.py:79
 msgid "App build"
-msgstr ""
+msgstr "Build der Anwendung"
 
 #: device_app.py:80
 msgid "App hash"
-msgstr ""
+msgstr "Hash der Anwendung"
 
 #: device_app.py:81
 msgid "App timestamp"
-msgstr ""
+msgstr "Zeitstempel der Anwendung"
 
 #: device_app.py:85
 msgid "Platform OS"
-msgstr ""
+msgstr "Betriebssystem der Platform"
 
 #: device_app.py:88
 msgid "Platform OS version"
-msgstr ""
+msgstr "Betriebssytemversion der Platform"
 
 #: device_app.py:89
 msgid "Device"
-msgstr ""
+msgstr "Gerät"
 
 #: device_app.py:90
 msgid "Device model"
-msgstr ""
+msgstr "Modell des Geräts"
 
 #: device_app.py:91
 msgid "Device id"
-msgstr ""
+msgstr "ID des Geräts"
 
 #: device_app.py:95
 msgid "Device timestamp"
-msgstr ""
+msgstr "Zeitstempel des Geräts"
 
 #: device_app.py:96
 msgid "Device uptime"
-msgstr ""
+msgstr "Laufzeit des Geräts"
 
 #: device_app.py:97
 msgid "WiFi IP address"
-msgstr ""
+msgstr "WiFi IP Adresse"
 
 #: device_app.py:134
 msgid "Connection type"
-msgstr ""
+msgstr "Verbindungstyp"
 
 #: device_app.py:135
 msgid "Is VPN"
-msgstr ""
+msgstr "Ist VPN"
 
 #: device_app.py:136
 msgid "Is connected"
-msgstr ""
+msgstr "Ist verbunden"
 
 #: device_app.py:137
 msgid "Internet available"
-msgstr ""
+msgstr "Internet verfügbar"
 
 #: device_app.py:138
 msgid "IP address"
-msgstr ""
+msgstr "IP Adresse"
 
 #: device_app.py:139
 msgid "Gateway IP address"
-msgstr ""
+msgstr "Gateway Adresse"
 
 #: device_app.py:142 dishy.py:179 router.py:138
 msgid "Network"
-msgstr ""
+msgstr "Netzwerk"
 
 #: device_app.py:166
 msgid "Available"
-msgstr ""
+msgstr "Verfügbar"
 
 #: device_app.py:167
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #: device_app.py:171
 msgid "Sensors"
-msgstr ""
+msgstr "Sensoren"
 
 #: dishy.py:42
 msgid "Failed to load Dish Device Info"
-msgstr ""
+msgstr "Informationen der Antenne konnten nicht geladen werden"
 
 #: dishy.py:61
 msgid "Dish"
-msgstr ""
+msgstr "Antenne"
 
 #: dishy.py:77 router.py:58
 msgid "Hardware revision"
-msgstr ""
+msgstr "Version der Hardware"
 
 #: dishy.py:78 router.py:60
 msgid "Software version"
-msgstr ""
+msgstr "Version der Software"
 
 #: dishy.py:79
 msgid "Software update state"
-msgstr ""
+msgstr "Software Update Status"
 
 #: dishy.py:80
 msgid "User terminal ID"
-msgstr ""
+msgstr "Benutzer Terminal ID"
 
 #: dishy.py:81 router.py:62
 msgid "Development hardware"
-msgstr ""
+msgstr "Entwicklungs Hardware"
 
 #: dishy.py:82
 msgid "Actuators"
-msgstr ""
+msgstr "Aktuatoren"
 
 #: dishy.py:83
 msgid "Stow requested"
-msgstr ""
+msgstr "Verstauen (der Antenne) verlangt"
 
 #: dishy.py:86 router.py:61
 msgid "Manufactured version"
-msgstr ""
+msgstr "Herstellungsversion"
 
 #: dishy.py:88 router.py:71
 msgid "Boot count"
-msgstr ""
+msgstr "Start Zähler"
 
 #: dishy.py:89 router.py:64
 msgid "Software parts equal"
-msgstr ""
+msgstr "Gleiche Software Teile"
 
 #: dishy.py:92 router.py:63
 msgid "Anti-Rollback version"
-msgstr ""
+msgstr "Anti-Rollback version"
 
 #: dishy.py:97 router.py:67
 msgid "Country code"
-msgstr ""
+msgstr "Ländercode"
 
 #: dishy.py:98 router.py:68
 msgid "Device date/time"
-msgstr ""
+msgstr "Geräte Datum/Zeit"
 
 #: dishy.py:99 router.py:69
 msgid "Device timezone"
-msgstr ""
+msgstr "Zeitzone des Geräts"
 
 #: dishy.py:100 router.py:70
 msgid "Uptime"
-msgstr ""
+msgstr "Laufzeit des Geräts"
 
 #: dishy.py:100 router.py:70
 msgid "seconds"
-msgstr ""
+msgstr "Sekunden"
 
 #: dishy.py:104
 msgid "Class of service"
-msgstr ""
+msgstr "Geräteklasse"
 
 #: dishy.py:105
 msgid "Mobility class"
-msgstr ""
+msgstr "Mobilitätsklasse"
 
 #: dishy.py:106
 msgid "Service state"
-msgstr ""
+msgstr "Service Status"
 
 #: dishy.py:171
 msgid "Ethernet speed"
-msgstr ""
+msgstr "Netzwerk Geschwindigkeit"
 
 #: dishy.py:172
 msgid "Downlink Throughput, Kbps"
-msgstr ""
+msgstr "Geschwindigkeit Herunterladen, Kbps"
 
 #: dishy.py:173
 msgid "Uplink Throughput, Kbps"
-msgstr ""
+msgstr "Geschwindigkeit Hochladen, Kbps"
 
 #: dishy.py:174 router.py:135
 msgid "PoP ping latency, ms"
-msgstr ""
+msgstr "PoP Ping Latenz, ms"
 
 #: dishy.py:175 router.py:134
 msgid "PoP ping drop rate"
-msgstr ""
+msgstr "PoP Ping Fehlerrate"
 
 #: dishy.py:176
 msgid "Seconds to first non-empty slot"
-msgstr ""
+msgstr "Sekunden bis zum ersten nicht-leeren Slot"
 
 #: dishy.py:202
 msgid "GPS valid"
-msgstr ""
+msgstr "GPS gültig"
 
 #: dishy.py:203
 msgid "GPS satellites"
-msgstr ""
+msgstr "GPS Satelliten"
 
 #: dishy.py:204
 msgid "No GPS satellites after first fix"
-msgstr ""
+msgstr "Keine GPS Satelliten nach erstem Fix"
 
 #: dishy.py:207
 msgid "GPS"
-msgstr ""
+msgstr "GPS"
 
 #: dishy.py:226
 msgid "Signal level"
-msgstr ""
+msgstr "Signalqualität"
 
 #: dishy.py:226
 msgid "Good"
-msgstr ""
+msgstr "Gut"
 
 #: dishy.py:226
 msgid "Bad"
-msgstr ""
+msgstr "Schlecht"
 
 #: dishy.py:227
 msgid "SNR persistently low"
-msgstr ""
+msgstr "Signalqualität kontinuirlich schlecht"
 
 #: dishy.py:228
 msgid "Panel boresight Azimuth angle, deg"
-msgstr ""
+msgstr "Azimutwinkel"
 
 #: dishy.py:229
 msgid "Panel boresight Elevation agngle, deg"
-msgstr ""
+msgstr "Elevationswinkel"
 
 #: dishy.py:232
 msgid "Antenna"
-msgstr ""
+msgstr "Antenne"
 
 #: dishy.py:258
 msgid "Clock generator"
-msgstr ""
+msgstr "Zeitgenerator"
 
 #: dishy.py:259
 msgid "RFFE bus interface"
-msgstr ""
+msgstr "RFFE Bus Schnittstelle"
 
 #: dishy.py:260
 msgid "Modem L1L2"
-msgstr ""
+msgstr "Modem L1/L2"
 
 #: dishy.py:261
 msgid "Xilinx XPHY interface"
-msgstr ""
+msgstr "Schnittstelle Xilinx PHY"
 
 #: dishy.py:262
 msgid "Digital beamformers"
-msgstr ""
+msgstr "Digitale Beamformer"
 
 #: dishy.py:263
 msgid "RF front end"
-msgstr ""
+msgstr "HF Frontend"
 
 #: dishy.py:266
 msgid "Ready states"
-msgstr ""
+msgstr "Status"
 
 #: dishy.py:290
 msgid "Cause"
-msgstr ""
+msgstr "Grund"
 
 #: dishy.py:291
 msgid "Start timestamp, ns"
-msgstr ""
+msgstr "Startzeit, ns"
 
 #: dishy.py:292
 msgid "Duration, ns"
-msgstr ""
+msgstr "Dauer, ns"
 
 #: dishy.py:293
 msgid "Did switch"
-msgstr ""
+msgstr "Wurde geändert"
 
 #: dishy.py:296
 msgid "Outage"
-msgstr ""
+msgstr "Ausfall"
 
 #: dishy.py:330
 msgid "Currently obstructed"
-msgstr ""
+msgstr "Verdeckt"
 
 #: dishy.py:331
 msgid "Fraction obstructed"
-msgstr ""
+msgstr "Teilverdeckt"
 
 #: dishy.py:332
 msgid "Time obstructed"
-msgstr ""
+msgstr "Zeit verdeckt"
 
 #: dishy.py:333
 msgid "Time valid, sec"
-msgstr ""
+msgstr "Zeit gültig"
 
 #: dishy.py:334
 msgid "Average prolonged obstruction duration, sec"
@@ -367,304 +367,304 @@ msgstr ""
 
 #: dishy.py:340
 msgid "Obstructions"
-msgstr ""
+msgstr "Hindernisse"
 
 #: dishy_data.py:62
 msgid "Stationary"
-msgstr ""
+msgstr "Stationär"
 
 #: dishy_data.py:63
 msgid "Nomadic"
-msgstr ""
+msgstr "Nomadisch"
 
 #: dishy_data.py:64
 msgid "Mobile"
-msgstr ""
+msgstr "Mobil"
 
 #: dishy_data.py:83
 msgid "Consumer"
-msgstr ""
+msgstr "Verbraucher"
 
 #: dishy_data.py:84
 msgid "Business"
-msgstr ""
+msgstr "Unternehmen"
 
 #: dishy_data.py:85
 msgid "Business Plus"
-msgstr ""
+msgstr "Unternehmen plus"
 
 #: dishy_data.py:86
 msgid "Commercial Aviation"
-msgstr ""
+msgstr "Kommerzielle Luftfahrt"
 
 #: dishy_data.py:108
 msgid "Idle"
-msgstr ""
+msgstr "Leerlauf"
 
 #: dishy_data.py:109
 msgid "Fetching"
-msgstr ""
+msgstr "Holen"
 
 #: dishy_data.py:110
 msgid "Pre Check"
-msgstr ""
+msgstr "Vorabkontrolle"
 
 #: dishy_data.py:111
 msgid "Writing"
-msgstr ""
+msgstr "Schreiben"
 
 #: dishy_data.py:112
 msgid "Post Check"
-msgstr ""
+msgstr "Nachkontrolle"
 
 #: dishy_data.py:113
 msgid "Reboot required"
-msgstr ""
+msgstr "Neustart nötig"
 
 #: dishy_data.py:114
 msgid "Disabled"
-msgstr ""
+msgstr "Ausgeschaltet"
 
 #: dishy_data.py:115
 msgid "Faulted"
-msgstr ""
+msgstr "Defekt"
 
 #: dishy_data.py:131
 msgid "Has Actuators"
-msgstr ""
+msgstr "Hat Aktuatoren"
 
 #: dishy_data.py:132
 msgid "No Actuators"
-msgstr ""
+msgstr "Keine Aktuatoren"
 
 #: dishy_data.py:150
 msgid "Unknown, presumably active"
-msgstr ""
+msgstr "Unbekannt, wahrscheinlich aktiv"
 
 #: dishy_data.py:151
 msgid "Okay"
-msgstr ""
+msgstr "OK"
 
 #: dishy_data.py:152
 msgid "No active account"
-msgstr ""
+msgstr "Kein aktives Konto"
 
 #: dishy_data.py:153
 msgid "Too far from service address"
-msgstr ""
+msgstr "Zu weit von Nutzungsgebiet entfernt"
 
 #: dishy_data.py:154
 msgid "In ocean"
-msgstr ""
+msgstr "Im Ozean"
 
 #: dishy_data.py:155
 msgid "Invalid country"
-msgstr ""
+msgstr "Ungültiges Land"
 
 #: dishy_data.py:181
 msgid "Booting"
-msgstr ""
+msgstr "Startet"
 
 #: dishy_data.py:182
 msgid "Stowed"
-msgstr ""
+msgstr "Verstaut"
 
 #: dishy_data.py:183
 msgid "Thermal shutdown"
-msgstr ""
+msgstr "Überhitzung"
 
 #: dishy_data.py:184
 msgid "No schedule"
-msgstr ""
+msgstr "Kein Zeitplan"
 
 #: dishy_data.py:185
 msgid "No satellites"
-msgstr ""
+msgstr "Keine Satelliten"
 
 #: dishy_data.py:186
 msgid "Obstructed"
-msgstr ""
+msgstr "Verdeckt"
 
 #: dishy_data.py:187
 msgid "No downlink"
-msgstr ""
+msgstr "Kein Downlink"
 
 #: dishy_data.py:188
 msgid "No pings"
-msgstr ""
+msgstr "Kein Ping"
 
 #: dishy_data.py:189
 msgid "Activity of the actuator"
-msgstr ""
+msgstr "Aktivität des Aktuators"
 
 #: dishy_data.py:190
 msgid "Cable test is running"
-msgstr ""
+msgstr "Kabeltest läuft"
 
 #: dishy_data.py:191
 msgid "Sleeping"
-msgstr ""
+msgstr "Schlafen"
 
 #: dishy_data.py:192
 msgid "Moving while not allowed"
-msgstr ""
+msgstr "Bewegung nicht erlaubt"
 
 #: entity.py:43
 msgid "Remote access"
-msgstr ""
+msgstr "Fernzugriff"
 
 #: entity.py:43
 msgid "Local access"
-msgstr ""
+msgstr "Lokeler Zugfriff"
 
 #: entity.py:47 entity.py:64
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: entity.py:47 entity.py:64
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: entity.py:115 entity.py:117
 msgid "Alerts"
-msgstr ""
+msgstr "Alarm"
 
 #: entity.py:115
 msgid "No alerts"
-msgstr ""
+msgstr "Kein Alarm"
 
 #: router.py:36
 msgid "Failed to load Router Device Info"
-msgstr ""
+msgstr "Router Informationen konnten nicht geladen werden"
 
 #: router.py:55
 msgid "Router"
-msgstr ""
+msgstr "Router"
 
 #: router.py:59
 msgid "Router ID"
-msgstr ""
+msgstr "Router ID"
 
 #: router.py:75
 msgid "Aviation"
-msgstr ""
+msgstr "Luftfahrt"
 
 #: router.py:76
 msgid "Captive portal enabled"
-msgstr ""
+msgstr "Captive Portal eingeschalten"
 
 #: router.py:130
 msgid "WAN IPv4"
-msgstr ""
+msgstr "WAN IP Adresse"
 
 #: router.py:131
 msgid "Ping drop rate"
-msgstr ""
+msgstr "Ping Verlustrate"
 
 #: router.py:132
 msgid "Starlink ping drop rate"
-msgstr ""
+msgstr "Starlink Ping Verlustrate"
 
 #: router.py:133
 msgid "Starlink ping latency, ms"
-msgstr ""
+msgstr "Starlink Ping Latenz"
 
 #: router.py:163
 msgid "Last reboot reason"
-msgstr ""
+msgstr "Grund für letzten Neustart"
 
 #: router.py:164
 msgid "Last boot count"
-msgstr ""
+msgstr "Bootzähler"
 
 #: router.py:170
 msgid "Reason"
-msgstr ""
+msgstr "Grund"
 
 #: router.py:171
 msgid "count by this reason"
-msgstr ""
+msgstr "Zähler fuer diesen Grund"
 
 #: router.py:173
 msgid "Boot info"
-msgstr ""
+msgstr "Startinformationen"
 
 #: router_data.py:48
 msgid "Forgotten"
-msgstr ""
+msgstr "Vergessen"
 
 #: router_data.py:49
 msgid "Power cycle"
-msgstr ""
+msgstr "Neustart"
 
 #: router_data.py:50
 msgid "Command"
-msgstr ""
+msgstr "Kommando"
 
 #: router_data.py:51
 msgid "Software update"
-msgstr ""
+msgstr "Software Update"
 
 #: router_data.py:52
 msgid "Configuration update"
-msgstr ""
+msgstr "Konfigurations Update"
 
 #: space_dbg.py:197
 msgid "Reachable"
-msgstr ""
+msgstr "Erreichbar"
 
 #: space_dbg.py:198
 msgid "Access type"
-msgstr ""
+msgstr "Zugriffstyp"
 
 #: space_dbg.py:208
 msgid "copied to clipboard"
-msgstr ""
+msgstr "In Zwischenablage kopiert"
 
 #: space_dbg.py:228
 msgid "Failed to load JSON file"
-msgstr ""
+msgstr "JSON Datei konnte nicht geladen werden"
 
 #: space_dbg.py:243
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: space_dbg_start.py:60
 msgid "Failed to run Space Debugger"
-msgstr ""
+msgstr "Space Debugger konnte nicht gestartet werden"
 
 #: space_dbg_start.py:72
 msgid "Paste debug data JSON text"
-msgstr ""
+msgstr "Debug Daten in JSON Format einfügen"
 
 #: space_dbg_start.py:89
 msgid "Ok"
-msgstr ""
+msgstr "OK"
 
 #: space_dbg_start.py:92
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: space_dbg_start.py:119
 msgid "Space Debugger: select data source"
-msgstr ""
+msgstr "Space Debugger - Datenquelle wählen"
 
 #: space_dbg_start.py:128
 msgid "Open JSON file"
-msgstr ""
+msgstr "JSON Datei öffnen"
 
 #: space_dbg_start.py:133
 msgid "Paste JSON text"
-msgstr ""
+msgstr "JSON Text einfügen"
 
 #: space_dbg_start.py:141
 msgid "JSON files"
-msgstr ""
+msgstr "JSON Dateien"
 
 #: space_dbg_start.py:141
 msgid "All files"
-msgstr ""
+msgstr "Alle Dateien"
 
 #: space_dbg_start.py:142
 msgid "Select JSON file"
-msgstr ""
+msgstr "JSON Datei auswählen"
