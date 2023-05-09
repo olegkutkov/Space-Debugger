@@ -1,0 +1,13 @@
+===
+Version 0.1 
+April 20, 2023
+ - Initial version
+
+===
+Version 0.2
+May 9, 2023
+ - Add suport for new languages: Portuguese, French, German
+ - Implement "Features" plugin
+ - Add suport for the latest Dishy and Router options:
+	Inhibit gps, Cohoused Dihy, IPv6 addresses, DHCP servers
+
