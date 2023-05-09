@@ -21,6 +21,7 @@
 import json
 import gettext
 from common_data import DEVICE_ALERTS_KEY
+from common_data import DEVICE_FEATURES_KEY
 _ = gettext.gettext
 
 ''' Basic class for all entities like Dishy, Router, Local device '''
@@ -70,6 +71,27 @@ class EntityModule:
         return self.data_ready
 
 ''' This module used both for Dishy and router so I moved it here '''
+def camel_case_split(data):
+    words = [[data[0]]]
+
+    for c in data[1:]:
+        if words[-1][-1].islower() and c.isupper():
+            words.append(list(c))
+        else:
+            words[-1].append(c)
+
+    return [''.join(word) for word in words]
+
+def words_to_str(words):
+    good_str = ''
+
+    for word in words:
+        good_str += word + ' '
+
+    good_str = good_str.capitalize()
+
+    return good_str
+
 class ModuleAlerts(EntityModule):
     def __init__(self, json_object):
         super().__init__()
@@ -81,32 +103,17 @@ class ModuleAlerts(EntityModule):
 
         self.data = []
         alerts_data = json_object[DEVICE_ALERTS_KEY]
+
+        self.words = []
  
         for alert in alerts_data:
            if alerts_data[alert]:
-                words = self.camel_case_split(alert)
-                good_str = ''
-
-                for word in words:
-                    good_str += word + ' '
-
-                good_str = good_str.capitalize()
-                self.data.append([' ', good_str])
+                self.words = camel_case_split(alert) 
+                self.data.append([' ', words_to_str(self.words)])
 
         self.no_alerts = not len(self.data)
         self.data_ready = True
- 
-    def camel_case_split(self, str):
-        words = [[str[0]]]
- 
-        for c in str[1:]:
-            if words[-1][-1].islower() and c.isupper():
-                words.append(list(c))
-            else:
-                words[-1].append(c)
- 
-        return [''.join(word) for word in words]
- 
+
     def get_name(self):
         return 'Alerts'
 
@@ -116,3 +123,31 @@ class ModuleAlerts(EntityModule):
 
         return [ _('Alerts'), self.data ]
 
+class Features(EntityModule):
+    def __init__(self, json_object):
+        super().__init__()
+
+        self.no_features = False
+
+        if DEVICE_FEATURES_KEY not in json_object:
+            self.no_features = True
+
+        self.data = []
+        features_data = json_object[DEVICE_FEATURES_KEY]
+
+        for feature in features_data:
+            if features_data[feature]:
+                self.words = camel_case_split(feature)
+                self.data.append([' ', words_to_str(self.words)])
+
+        self.no_features = not len(self.data)
+        self.data_ready = True
+
+    def get_name(self):
+        return 'Features'
+
+    def get_data(self):
+        if self.no_features:
+            return [ _('Features'), [[' ', _('No features')]] ]
+
+        return [ _('Features'), self.data ]

@@ -31,6 +31,8 @@ DEVICE_INFO_IS_DEV_KEY = 'isDev'
 DEVICE_INFO_BOOT_COUNT_KEY = 'bootcount'
 DEVICE_INFO_ANTI_ROLLBACK_KEY = 'antiRollbackVersion'
 
+DEVICE_FEATURES_KEY = 'features'
+
 DEVICE_TIMESTAMP_KEY = 'timestamp'
 DEVICE_STATE_KEY = 'deviceState'
 DEVICE_UPTIME_KEY = 'uptimeS'
