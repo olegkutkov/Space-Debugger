@@ -40,6 +40,7 @@ class Router(Entity):
         if self.reachable:
             self.plugins.append(RouterNetwork(json_object))
             self.plugins.append(ModuleAlerts(json_object))
+            self.plugins.append(Features(json_object))
             self.plugins.append(BootInfo(json_object))
 
     def get_device_image_file(self):
@@ -73,6 +74,7 @@ class Router(Entity):
         result['  '] = ''
 
         result[_('Aviation')] = self.yes_or_no(self.is_aviation)
+        result[_('Aviation conformed')] = self.yes_or_no(self.is_aviation_conformed)
         result[_('Captive portal enabled')] = self.yes_or_no(self.captiva_portal_enabled)
 
     def parse_device_info(self, json_object):
@@ -98,6 +100,7 @@ class Router(Entity):
         self.uptime = device_state.get(DEVICE_UPTIME_KEY, 0)
 
         self.is_aviation = json_object.get(ROUTER_IS_AVIATION_KEY, False)
+        self.is_aviation_conformed = json_object.get(ROUTER_IS_AVIATION_CONFORMED_KEY, False)
         self.captiva_portal_enabled = json_object.get(ROUTER_CAPTIVE_PORTAL_ENABLED_KEY, False)
 
         return True
@@ -114,6 +117,8 @@ class RouterNetwork(EntityModule):
         super().__init__()
 
         self.wan_ipv4 = json_object.get(ROUTER_WAN_IPV4_ADDRESS_KEY, "0.0.0.0")
+        self.wan_ipv6 = json_object.get(ROUTER_WAN_IPV6_ADDRESS_LIST_KEY, [])
+        self.dhcp_servers = json_object.get(ROUTER_WAN_DHPS_SERVERS_LIST_KEY, [])
         self.ping_drop_rate = json_object.get(ROUTER_PING_DROP_RATE_KEY, 0)
         self.dish_ping_drop_rate = json_object.get(ROUTER_DISH_PING_DROP_RATE_KEY, 0)
         self.dish_ping_latency_ms = json_object.get(ROUTER_DISH_PING_LATENCY_MS_KEY, 0)
@@ -126,8 +131,13 @@ class RouterNetwork(EntityModule):
         return 'Network'
 
     def get_data(self):
+        self.ipv6_list = ', '.join(str(s) for s in self.wan_ipv6)
+        self.dhcp_servers_list = ', '.join(str(s) for s in self.dhcp_servers)
+
         data = [
             [ _('WAN IPv4'), self.wan_ipv4 ],
+            [ _('WAN IPv6'), self.ipv6_list],
+            [ _('DHCP servers'), self.dhcp_servers_list],
             [ _('Ping drop rate'), self.ping_drop_rate ],
             [ _('Starlink ping drop rate'), self.dish_ping_drop_rate ],
             [ _('Starlink ping latency, ms'), self.dish_ping_latency_ms ],

@@ -49,6 +49,7 @@ class Dishy(Entity):
             self.plugins.append(DishyGPS(json_object))
             self.plugins.append(DishyAntenna(json_object))
             self.plugins.append(ModuleAlerts(json_object))
+            self.plugins.append(Features(json_object))
             self.plugins.append(DishyReadyStates(json_object))
             self.plugins.append(DishyOutage(json_object))
             self.plugins.append(DishyObstructions(json_object))
@@ -79,6 +80,7 @@ class Dishy(Entity):
             result[_('Software update state')] = software_update_state_str[self.software_upd_state]
             result[_('User terminal ID')] = self.device_id
             result[_('Development hardware')] = self.yes_or_no(self.is_developer)
+            result[_('Starlink cohoused')] = self.yes_or_no(self.dishy_cohoused)
             result[_('Actuators')] = actuator_state_str[self.has_actuators]
             result[_('Stow requested')] = self.yes_or_no(self.stow_requested)
 
@@ -123,6 +125,7 @@ class Dishy(Entity):
             self.is_developer = device_info.get(DEVICE_INFO_IS_DEV_KEY, False)
             self.boot_count = device_info.get(DEVICE_INFO_BOOT_COUNT_KEY, 0)
             self.anti_rollback_version = device_info.get(DEVICE_INFO_ANTI_ROLLBACK_KEY, 0)
+            self.dishy_cohoused = device_info.get(DEVICE_DISH_COHOUSED_KEY, False)
 
             self.timestamp = json_object.get(DEVICE_TIMESTAMP_KEY, 0)
             self.uptime = device_state.get(DEVICE_UPTIME_KEY, 0)
@@ -190,7 +193,8 @@ class DishyGPS(EntityModule):
 
         self.gps_valid = gps_stats.get(DEVICE_GPS_STATS_GPS_VALID_KEY, False)
         self.gps_sats = gps_stats.get(DEVICE_GPS_STATS_GPS_SATS_KEY, 0)
-        self.gps_no_sats_after_fix = gps_stats.get(DEVICE_GPS_STATS_NO_SATS_AFTER_FFIX, False)
+        self.gps_no_sats_after_fix = gps_stats.get(DEVICE_GPS_STATS_NO_SATS_AFTER_FFIX_KEY, False)
+        self.gps_inhibit = gps_stats.get(DEVICE_GPS_INHIBIT_KEY, False)
 
         self.data_ready = True
 
@@ -201,7 +205,8 @@ class DishyGPS(EntityModule):
         data = [
             [ _('GPS valid'),  self.yes_or_no(self.gps_valid) ],
             [ _('GPS satellites'), self.gps_sats ],
-            [ _('No GPS satellites after first fix'), self.yes_or_no(self.gps_no_sats_after_fix) ]
+            [ _('No GPS satellites after first fix'), self.yes_or_no(self.gps_no_sats_after_fix) ],
+            [ _('Don\'t trust Dishy\'s GPS'), self.yes_or_no(self.gps_inhibit) ]
         ]
 
         return [ _('GPS'), data ]
@@ -309,6 +314,7 @@ class DishyObstructions(EntityModule):
         self.fraction_obstructed = obstr_data.get(DEVICE_OBSTRUCTION_STATS_FRACTION_OBSTRUCTED_KEY, 0)
         self.time_obstructed = obstr_data.get(DEVICE_OBSTRUCTION_STATS_TIME_OBSTRUCTED_KEY, 0)
         self.valid_sec = obstr_data.get(DEVICE_OBSTRUCTION_STATS_VALID_SEC_KEY, 0)
+        self.patches_valid = obstr_data.get(DEVICE_OBSTRUCTION_STATS_PATCHES_VALID_KEY, 0)
         self.frac_obstr_list = obstr_data.get(DEVICE_OBSTRUCTION_STATS_WEDGE_FRAC_OBSTRUCTED_LIST_KEY, [])
         self.abs_obstr_list = obstr_data.get(DEVICE_OBSTRUCTION_STATS_WEDGE_ABS_OBSTRUCTED_LIST_KEY, [])
         self.avg_pr_dur_sec = obstr_data.get(DEVICE_OBSTRUCTION_STATS_AVG_PROLONGED_OBSTR_DURATION_SEC_KEY, 0)
@@ -331,6 +337,7 @@ class DishyObstructions(EntityModule):
             [ _('Fraction obstructed'), self.fraction_obstructed ],
             [ _('Time obstructed'), self.time_obstructed ],
             [ _('Time valid, sec'), self.valid_sec ],
+            [ _('Patches valid'), self.patches_valid],
             [ _('Average prolonged obstruction duration, sec'), self.avg_pr_dur_sec ],
             [ _('Average prolonged obstruction interval, sec'), self.avg_pr_int_sec],
             [ _('Average prolonged obstruction valid'), self.yes_or_no(self.avg_pr_valid) ],
