@@ -25,8 +25,27 @@ Select JSON file or paste copied JSON text to the window
 Or run space debugger directly:
 >python3 space_dbg.py -f debug_data.json
 
+### Run on MacOS
+Update or install Xcode cmd tools:
+>sudo rm -rf /Library/Developer/CommandLineTools
+>sudo xcode-select --install
+
+Install python-tk with brew:
+>brew install python-tk
+
+Install pyperclip:
+>curl https://files.pythonhosted.org/packages/a7/2c/4c64579f847bd5d539803c8b909e54ba087a79d01bb3aba433a95879a6c5/pyperclip-1.8.2.tar.gz > pyperclip.tar.gz
+>tar -xzvf pyperclip.tar.gz
+>cd pyperclip-1.8.2/
+>python3 setup.py install
+
+Run Space debugger:
+> python3 space_dbg_start.py
+
+![](https://raw.githubusercontent.com/olegkutkov/Space-Debugger/main/doc/space-debugger-on-mac.png)
+
 ### Precompiled binaries for Windows
-Windows users can use precompiled exe files from release [archive](https://github.com/olegkutkov/Space-Debugger/blob/main/build/windows/space_dbg_windows_bundle-0_1.zip)
+Windows users can use precompiled exe files from release [archive](https://github.com/olegkutkov/Space-Debugger/blob/main/build/windows/space_dbg_windows_bundle-0_2.zip)
 
 Just extract the archive and run `space_dbg_start.exe`
 
