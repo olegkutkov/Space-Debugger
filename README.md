@@ -45,7 +45,7 @@ Run Space debugger:
 ![](https://raw.githubusercontent.com/olegkutkov/Space-Debugger/main/doc/space-debugger-on-mac.png)
 
 ### Precompiled binaries for Windows
-Windows users can use precompiled exe files from release [archive](https://github.com/olegkutkov/Space-Debugger/blob/main/build/windows/space_dbg_windows_bundle-0_2.zip)
+Windows users can use precompiled exe files from release [archive](https://github.com/olegkutkov/Space-Debugger/blob/main/build/windows/space_dbg_windows_bundle-0_2_1.zip)
 
 Just extract the archive and run `space_dbg_start.exe`
 
