@@ -117,12 +117,22 @@ class DeviceNetwork(EntityModule):
 
         self.is_vpn = network.get(DEVICE_NETWORK_VPN_KEY, False)
         self.gateway_ip = network.get(DEVICE_NETWORK_GATEWAY_IP_ADDR_KEY, '0.0.0.0')
+        self.public_ip = network.get(DEVICE_NETWORK_PUBLIC_IP_KEY, '0.0.0.0')
+        self.is_starlink_conn = network.get(DEVICE_NETWORK_IS_STARLINK_KEY, False)
 
         self.net_type = network_info.get(DEVICE_NETWORK_NETINFO_TYPE_KEY, 'wifi')
+        self.is_bypass_mode = not network_info.get(DEVICE_NETWORK_NETINFO_WIFI_ENABLED_KEY, True)
         self.is_connected = network_info.get(DEVICE_NETWORK_NETINFO_IS_CONNECTED_KEY, False)
         self.is_internet_available = network_info.get(DEVICE_NETWORK_IS_INTERNET_REACHABLE, False)
 
         self.ip_addr = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_IP_ADDR_KEY, '0.0.0.0')
+        self.local_link_speed = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_LINK_SPEED_KEY, 0)
+        self.local_link_speed =  str(self.local_link_speed) + ' Mbps'
+
+        self.wifi_link_freq = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_FREQ_KEY, 0)
+        self.wifi_ssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_SSID_KEY, '')
+        self.wifi_bssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_BSSID_KEY, '')
+        self.wifi_signal_level = network_info_details.get(DEVICE_NETWORK_NETINFO_DTAILS_SIGNAL_LEVEL_KEY, 150)
 
         self.data_ready = True
 
@@ -131,13 +141,27 @@ class DeviceNetwork(EntityModule):
 
     def get_data(self):
         data = [
-            [ _('Connection type'), self.net_type ],
+            [ _('Local connection type'), self.net_type ],
+            [ _('Local connection speed'), self.local_link_speed ],
             [ _('Is VPN'), self.yes_or_no(self.is_vpn) ],
             [ _('Is connected'), self.yes_or_no(self.is_connected) ],
             [ _('Internet available'), self.yes_or_no(self.is_internet_available) ],
-            [ _('IP address'), self.ip_addr ],
-            [ _('Gateway IP address'), self.gateway_ip ]
+            [ _('Connected via Starlink'), self.yes_or_no(self.is_starlink_conn) ],
+            [ _('Starlink router bypass mode'), self.yes_or_no(self.is_bypass_mode) ],
+            [ _('Local IP address'), self.ip_addr ],
+            [ _('Gateway IP address'), self.gateway_ip ],
+            [ _('Public IP address'), self.public_ip]
         ]
+
+        if self.net_type == 'wifi':
+            wifi_data = [
+                [ _('WiFi SSID'), self.wifi_ssid ],
+                [ _('WiFi BSSID'), self.wifi_bssid ],
+                [ _('WiFi frequency'), self.wifi_link_freq ],
+                [ _('WiFi signal strength'), self.wifi_signal_level ]
+            ]
+
+            data += wifi_data
 
         return [ _('Network'), data ]
 
