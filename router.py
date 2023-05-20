@@ -137,7 +137,7 @@ class RouterNetwork(EntityModule):
         data = [
             [ _('WAN IPv4'), self.wan_ipv4 ],
             [ _('WAN IPv6'), self.ipv6_list],
-            [ _('DHCP servers'), self.dhcp_servers_list],
+            #[ _('DHCP servers'), self.dhcp_servers_list],
             [ _('Ping drop rate'), self.ping_drop_rate ],
             [ _('Starlink ping drop rate'), self.dish_ping_drop_rate ],
             [ _('Starlink ping latency, ms'), self.dish_ping_latency_ms ],
