@@ -220,13 +220,20 @@ class SpaceDebuggerMain(tk.Tk):
 
     ''' Load Starlink JSON data '''
     def load_json_data(self):
+        f = None
+        self.json_data = None
         try:
             f = open(self.json_file)
             self.json_data = json.load(f)
-            f.close()
-        except Exception as err:
+        except:
+            f = open(self.json_file, encoding="utf8")
+            self.json_data = json.load(f)
+
+        if f is None or self.json_data is None:
             messagebox.showerror(_('Failed to load JSON file'), err)
             sys.exit()
+
+        f.close()
 
     ''' Read and parse Starlink JSON data '''
     def read_json_data(self):
