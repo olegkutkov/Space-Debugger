@@ -11,3 +11,12 @@ May 9, 2023
  - Add support for the latest Dishy and Router options:
 	Inhibit gps, Cohoused Dihy, IPv6 addresses, DHCP servers
 
+===
+Version 0.2.1
+May 21, 2023
+ - Router tab: Hide DHCP servers info (TODO)
+ - Local device tab: Show WiFi link information
+ - Local device tab: Show router bypass mode
+ - Local device tab: Show additional net info
+ - Windows bundle is now built on Windows 11, should fix copy-paste issue
+
