@@ -30,7 +30,8 @@ class Router(Entity):
     def __init__(self, json_object):
         print("Loading Router")
 
-        super().__init__('Router', json_object[ROUTER_REACHABLE_KEY], json_object[ROUTER_CLOUD_ACCESS_KEY]) 
+        super().__init__('Router', json_object.get(ROUTER_REACHABLE_KEY, False), \
+                                    json_object.get(ROUTER_CLOUD_ACCESS_KEY, False))
 
         if self.reachable and not self.parse_device_info(json_object):
             raise Exception(_('Failed to load Router Device Info'))
