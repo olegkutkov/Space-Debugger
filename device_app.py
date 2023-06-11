@@ -56,7 +56,13 @@ class DeviceApp(Entity):
             self.device = json_object.get(DEVICE_NAME_KEY, '')
             self.device_model = json_object.get(DEVICE_MODEL_KEY, '')
             self.device_id = json_object.get(DEVICE_ID_KEY, '')
-            self.wifi_ip = json_object[DEVICE_WIFI_KEY].get(DEVICE_WIFI_IP_ADDR_KEY, '0.0.0.0')
+            wifi_section = json_object.get(DEVICE_WIFI_KEY)
+            if wifi_section:
+                self.wifi_ip = wifi_section.get(DEVICE_WIFI_IP_ADDR_KEY, '0.0.0.0')
+                self.wifi_ssid = wifi_section.get(DEVICE_NETWORK_NETINFO_DETAILS_SSID_KEY, '')
+            else:
+                self.wifi_ip = _('unknown')
+                self.wifi_ssid = _('unknown')
 
             self.plugins.append(DeviceNetwork(json_object))
             self.plugins.append(DeviceSensors(json_object))
@@ -95,6 +101,7 @@ class DeviceApp(Entity):
             result[_('Device timestamp')] = datetime.datetime.fromtimestamp(self.timestamp)
             result[_('Device uptime')] = self.uptime
             result[_('WiFi IP address')] = self.wifi_ip
+            result[_('WiFi SSID')] = self.wifi_ssid
             
 
     def get_additional_data(self, result):
