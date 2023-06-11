@@ -112,7 +112,7 @@ class SpaceDebuggerMain(tk.Tk):
 
                 ''' Store image data in the class field '''
                 tab_image = module_object.get_device_image_file()
-                self.tab_images[tab_name] = ImageTk.PhotoImage(Image.open(tab_image).resize((self.img_canvas_w, self.img_canvas_h), Image.Resampling.LANCZOS))
+                self.tab_images[tab_name] = ImageTk.PhotoImage(Image.open(tab_image).resize((self.img_canvas_w, self.img_canvas_h)))
 
                 canvas.create_image((0,0), anchor=tk.NW, image=self.tab_images[tab_name])
 
@@ -154,7 +154,7 @@ class SpaceDebuggerMain(tk.Tk):
                                     cv = tk.Canvas(subtab_frame, width=170, height=170)
                                     cv.grid(sticky="NE", row=0, column=2, rowspan=len(subtab_params))
 
-                                    self.subtab_images[subtab_name] = ImageTk.PhotoImage(subtab_param_value.resize((170, 170), Image.Resampling.LANCZOS))
+                                    self.subtab_images[subtab_name] = ImageTk.PhotoImage(subtab_param_value.resize((170, 170)))
                                     cv.create_image((0,0), anchor=tk.NW, image=self.subtab_images[subtab_name])
 
                                     cv.bind("<Button-1>", lambda event, arg=subtab_param_value: self.show_image_mem(arg))
