@@ -20,3 +20,10 @@ May 21, 2023
  - Local device tab: Show additional net info
  - Windows bundle is now built on Windows 11, should fix copy-paste issue
 
+===
+Version 0.3
+Aug 22, 2023
+ - Add support for the new JSON format
+ - Add support for the Dishy Alignment Stats
+ - Add support for the Dishy configuration
+
