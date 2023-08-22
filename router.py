@@ -30,19 +30,24 @@ class Router(Entity):
     def __init__(self, json_object):
         print("Loading Router")
 
-        super().__init__('Router', json_object.get(ROUTER_REACHABLE_KEY, False), \
-                                    json_object.get(ROUTER_CLOUD_ACCESS_KEY, False))
+        router_object = json_object
 
-        if self.reachable and not self.parse_device_info(json_object):
+        if STATUS_KEY in json_object:
+            router_object = json_object[STATUS_KEY]
+
+        super().__init__('Router', router_object.get(ROUTER_REACHABLE_KEY, False), \
+                                    router_object.get(ROUTER_CLOUD_ACCESS_KEY, False))
+
+        if self.reachable and not self.parse_device_info(router_object):
             raise Exception(_('Failed to load Router Device Info'))
 
         self.plugins = []
 
         if self.reachable:
-            self.plugins.append(RouterNetwork(json_object))
-            self.plugins.append(ModuleAlerts(json_object))
-            self.plugins.append(Features(json_object))
-            self.plugins.append(BootInfo(json_object))
+            self.plugins.append(RouterNetwork(router_object))
+            self.plugins.append(ModuleAlerts(router_object))
+            self.plugins.append(Features(router_object))
+            self.plugins.append(BootInfo(router_object))
 
     def get_device_image_file(self):
         if self.hw_version not in dev_images:
@@ -79,11 +84,16 @@ class Router(Entity):
         result[_('Captive portal enabled')] = self.yes_or_no(self.captiva_portal_enabled)
 
     def parse_device_info(self, json_object):
-        if DEVICE_INFO_KEY not in json_object:
+        router_object = json_object
+
+        if STATUS_KEY in json_object:
+            router_object = json_object[STATUS_KEY]
+
+        if DEVICE_INFO_KEY not in router_object:
             return False
 
-        device_info = json_object[DEVICE_INFO_KEY]
-        device_state = json_object[DEVICE_STATE_KEY]
+        device_info = router_object[DEVICE_INFO_KEY]
+        device_state = router_object[DEVICE_STATE_KEY]
 
         self.device_id = device_info.get(DEVICE_INFO_ID_KEY, _('Unknown'))
         self.sw_version = device_info.get(DEVICE_INFO_SW_VER_KEY, _('Unknown'))
@@ -97,12 +107,12 @@ class Router(Entity):
         self.boot_count = device_info.get(DEVICE_INFO_BOOT_COUNT_KEY, 0)
         self.anti_rollback_version = device_info.get(DEVICE_INFO_ANTI_ROLLBACK_KEY, 0)
 
-        self.timestamp = json_object.get(DEVICE_TIMESTAMP_KEY, 0)
+        self.timestamp = router_object.get(DEVICE_TIMESTAMP_KEY, 0)
         self.uptime = device_state.get(DEVICE_UPTIME_KEY, 0)
 
-        self.is_aviation = json_object.get(ROUTER_IS_AVIATION_KEY, False)
-        self.is_aviation_conformed = json_object.get(ROUTER_IS_AVIATION_CONFORMED_KEY, False)
-        self.captiva_portal_enabled = json_object.get(ROUTER_CAPTIVE_PORTAL_ENABLED_KEY, False)
+        self.is_aviation = router_object.get(ROUTER_IS_AVIATION_KEY, False)
+        self.is_aviation_conformed = router_object.get(ROUTER_IS_AVIATION_CONFORMED_KEY, False)
+        self.captiva_portal_enabled = router_object.get(ROUTER_CAPTIVE_PORTAL_ENABLED_KEY, False)
 
         return True
 

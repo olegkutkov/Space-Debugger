@@ -31,10 +31,15 @@ class DeviceApp(Entity):
 
         super().__init__('App', True, False)
 
-        if DEVICE_APP_KEY not in json_object:
+        app_object = json_object
+
+        if STATUS_KEY in json_object:
+          app_object = json_object[STATUS_KEY]
+
+        if DEVICE_APP_KEY not in app_object:
             raise Exception(_('Failed to load device app info'))
 
-        device_app = json_object[DEVICE_APP_KEY]
+        device_app = app_object[DEVICE_APP_KEY]
 
         self.device_app_version = device_app.get(DEVICE_APP_VERSION_KEY, _('Unknown'))
         self.device_app_environment = device_app.get(DEVICE_APP_ENVIRONMENT_KEY, _('Unknown'))
@@ -44,19 +49,19 @@ class DeviceApp(Entity):
 
         self.platform_os = 'unknown'
 
-        if DEVICE_PLATFORM_KEY in json_object:
-            self.platform_os = json_object[DEVICE_PLATFORM_KEY].get(DEVICE_PLATFORM_OS_KEY, 'unknown')
+        if DEVICE_PLATFORM_KEY in app_object:
+            self.platform_os = app_object[DEVICE_PLATFORM_KEY].get(DEVICE_PLATFORM_OS_KEY, 'unknown')
 
         self.plugins = []
 
         if self.platform_os != 'web' and self.platform_os != 'unknown':
-            self.platform_os_version = json_object[DEVICE_PLATFORM_KEY].get(DEVICE_PLATFORM_VERSION_KEY, '')
-            self.timestamp = json_object.get(DEVICE_TIMESTAMP_KEY, 0)
-            self.uptime = json_object.get(DEVICE_UPTIME_KEY, 0)
-            self.device = json_object.get(DEVICE_NAME_KEY, '')
-            self.device_model = json_object.get(DEVICE_MODEL_KEY, '')
-            self.device_id = json_object.get(DEVICE_ID_KEY, '')
-            wifi_section = json_object.get(DEVICE_WIFI_KEY)
+            self.platform_os_version = app_object[DEVICE_PLATFORM_KEY].get(DEVICE_PLATFORM_VERSION_KEY, '')
+            self.timestamp = app_object.get(DEVICE_TIMESTAMP_KEY, 0)
+            self.uptime = app_object.get(DEVICE_UPTIME_KEY, 0)
+            self.device = app_object.get(DEVICE_NAME_KEY, '')
+            self.device_model = app_object.get(DEVICE_MODEL_KEY, '')
+            self.device_id = app_object.get(DEVICE_ID_KEY, '')
+            wifi_section = app_object.get(DEVICE_WIFI_KEY)
             if wifi_section:
                 self.wifi_ip = wifi_section.get(DEVICE_WIFI_IP_ADDR_KEY, '0.0.0.0')
                 self.wifi_ssid = wifi_section.get(DEVICE_NETWORK_NETINFO_DETAILS_SSID_KEY, '')
@@ -64,8 +69,8 @@ class DeviceApp(Entity):
                 self.wifi_ip = _('unknown')
                 self.wifi_ssid = _('unknown')
 
-            self.plugins.append(DeviceNetwork(json_object))
-            self.plugins.append(DeviceSensors(json_object))
+            self.plugins.append(DeviceNetwork(app_object))
+            self.plugins.append(DeviceSensors(app_object))
 
     def get_device_image_file(self):
         if self.platform_os not in dev_images:
@@ -115,12 +120,17 @@ class DeviceNetwork(EntityModule):
     def __init__(self, json_object):
         super().__init__()
 
-        if DEVICE_NETWORK_KEY not in json_object:
+        app_object = json_object
+
+        if STATUS_KEY in json_object:
+          app_object = json_object[STATUS_KEY]
+
+        if DEVICE_NETWORK_KEY not in app_object:
             return None
 
-        network = json_object[DEVICE_NETWORK_KEY]
-        network_info = json_object[DEVICE_NETWORK_KEY][DEVICE_NETWORK_NETINFO_KEY]
-        network_info_details = network_info[DEVICE_NETWORK_NETINFO_DETAILS_KEY]
+        network = app_object[DEVICE_NETWORK_KEY]
+        network_info = app_object[DEVICE_NETWORK_KEY][DEVICE_NETWORK_NETINFO_KEY]
+        network_info_details = network_info.get(DEVICE_NETWORK_NETINFO_DETAILS_KEY, None)
 
         self.is_vpn = network.get(DEVICE_NETWORK_VPN_KEY, False)
         self.gateway_ip = network.get(DEVICE_NETWORK_GATEWAY_IP_ADDR_KEY, '0.0.0.0')
@@ -132,14 +142,23 @@ class DeviceNetwork(EntityModule):
         self.is_connected = network_info.get(DEVICE_NETWORK_NETINFO_IS_CONNECTED_KEY, False)
         self.is_internet_available = network_info.get(DEVICE_NETWORK_IS_INTERNET_REACHABLE, False)
 
-        self.ip_addr = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_IP_ADDR_KEY, '0.0.0.0')
-        self.local_link_speed = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_LINK_SPEED_KEY, 0)
-        self.local_link_speed =  str(self.local_link_speed) + ' Mbps'
+        if network_info_details is not None:
+            self.ip_addr = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_IP_ADDR_KEY, '0.0.0.0')
+            self.local_link_speed = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_LINK_SPEED_KEY, 0)
+            self.local_link_speed =  str(self.local_link_speed) + ' Mbps'
 
-        self.wifi_link_freq = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_FREQ_KEY, 0)
-        self.wifi_ssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_SSID_KEY, '')
-        self.wifi_bssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_BSSID_KEY, '')
-        self.wifi_signal_level = network_info_details.get(DEVICE_NETWORK_NETINFO_DTAILS_SIGNAL_LEVEL_KEY, 150)
+            self.wifi_link_freq = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_FREQ_KEY, 0)
+            self.wifi_ssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_SSID_KEY, '')
+            self.wifi_bssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_BSSID_KEY, '')
+            self.wifi_signal_level = network_info_details.get(DEVICE_NETWORK_NETINFO_DTAILS_SIGNAL_LEVEL_KEY, 150)
+        else:
+            self.ip_addr = ""
+            self.local_link_speed = ""
+            self.local_link_speed = ""
+            self.wifi_link_freq = ""
+            self.wifi_ssid = ""
+            self.wifi_bssid = ""
+            self.wifi_signal_level = ""
 
         self.data_ready = True
 
@@ -176,10 +195,15 @@ class DeviceSensors(EntityModule):
     def __init__(self, json_object):
         super().__init__()
 
-        if DEVICE_SENSORS_KEY not in json_object:
+        app_object = json_object
+
+        if STATUS_KEY in json_object:
+          app_object = json_object[STATUS_KEY]
+
+        if DEVICE_SENSORS_KEY not in app_object:
             return None
 
-        self.sensors_data = json_object[DEVICE_SENSORS_KEY]
+        self.sensors_data = app_object[DEVICE_SENSORS_KEY]
 
         self.data_ready = True
 

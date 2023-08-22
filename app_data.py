@@ -30,6 +30,7 @@ dev_images = {
     'web': 'resources/devices/web_app.png'
 }
 
+STATUS_KEY = 'status'
 DEVICE_KEY = 'device'
 DEVICE_APP_KEY = 'app'
 DEVICE_APP_VERSION_KEY = 'version'

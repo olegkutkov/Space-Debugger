@@ -35,24 +35,29 @@ class Dishy(Entity):
     def __init__(self, json_object):
         print("Loading Dish")
 
-        super().__init__('Dish', json_object.get(DISH_REACHABLE_KEY, False), \
-                                json_object.get(DISH_CLOUD_ACCESS_KEY, False))
+        dish_object = json_object
 
-        if self.reachable and not self.parse_device_info(json_object):
+        if STATUS_KEY in json_object:
+          dish_object = json_object[STATUS_KEY]
+
+        super().__init__('Dish', dish_object.get(DISH_REACHABLE_KEY, False), \
+                                dish_object.get(DISH_CLOUD_ACCESS_KEY, False))
+
+        if self.reachable and not self.parse_device_info(dish_object):
             raise Exception(_('Failed to load Dish Device Info'))
 
         self.plugins = []
 
         ''' Load additional data plugins '''
         if self.reachable:
-            self.plugins.append(DishyNetwork(json_object))
-            self.plugins.append(DishyGPS(json_object))
-            self.plugins.append(DishyAntenna(json_object))
-            self.plugins.append(ModuleAlerts(json_object))
-            self.plugins.append(Features(json_object))
-            self.plugins.append(DishyReadyStates(json_object))
-            self.plugins.append(DishyOutage(json_object))
-            self.plugins.append(DishyObstructions(json_object))
+            self.plugins.append(DishyNetwork(dish_object))
+            self.plugins.append(DishyGPS(dish_object))
+            self.plugins.append(DishyAntenna(dish_object))
+            self.plugins.append(ModuleAlerts(dish_object))
+            self.plugins.append(Features(dish_object))
+            self.plugins.append(DishyReadyStates(dish_object))
+            self.plugins.append(DishyOutage(dish_object))
+            self.plugins.append(DishyObstructions(dish_object))
 
     '''  This is SpaceX device '''
     def is_sx_device(self):
@@ -109,11 +114,16 @@ class Dishy(Entity):
 
     ''' Parse JSON data '''
     def parse_device_info(self, json_object):
-            if DEVICE_INFO_KEY not in json_object:
+            dish_object = json_object
+
+            if STATUS_KEY in json_object:
+                dish_object = json_object[STATUS_KEY]
+
+            if DEVICE_INFO_KEY not in dish_object:
                 return False
 
-            device_info = json_object[DEVICE_INFO_KEY]
-            device_state = json_object[DEVICE_STATE_KEY]
+            device_info = dish_object[DEVICE_INFO_KEY]
+            device_state = dish_object[DEVICE_STATE_KEY]
 
             self.device_id = device_info.get(DEVICE_INFO_ID_KEY, _('Unknown'))
             self.sw_version = device_info.get(DEVICE_INFO_SW_VER_KEY, _('Unknown'))
@@ -127,16 +137,16 @@ class Dishy(Entity):
             self.anti_rollback_version = device_info.get(DEVICE_INFO_ANTI_ROLLBACK_KEY, 0)
             self.dishy_cohoused = device_info.get(DEVICE_DISH_COHOUSED_KEY, False)
 
-            self.timestamp = json_object.get(DEVICE_TIMESTAMP_KEY, 0)
+            self.timestamp = dish_object.get(DEVICE_TIMESTAMP_KEY, 0)
             self.uptime = device_state.get(DEVICE_UPTIME_KEY, 0)
 
-            self.has_actuators = ActuatorState(json_object.get(DEVICE_HAS_ACTUATORS_KEY, 0))
-            self.stow_requested = json_object.get(DEVICE_STOW_REQUESTED_KEY, False)
-            self.mobility_class = MobylityClass(json_object.get(DEVICE_MOBILITY_CLASS_KEY, 0))
-            self.class_of_serivce = ServiceClass(json_object.get(DEVICE_CLASS_OF_SERVICE_KEY, 0))
-            self.disablement_code = DisablementCode(json_object.get(DEVICE_DISABLEMENT_CODE_KEY, 0))
+            self.has_actuators = ActuatorState(dish_object.get(DEVICE_HAS_ACTUATORS_KEY, 0))
+            self.stow_requested = dish_object.get(DEVICE_STOW_REQUESTED_KEY, False)
+            self.mobility_class = MobylityClass(dish_object.get(DEVICE_MOBILITY_CLASS_KEY, 0))
+            self.class_of_serivce = ServiceClass(dish_object.get(DEVICE_CLASS_OF_SERVICE_KEY, 0))
+            self.disablement_code = DisablementCode(dish_object.get(DEVICE_DISABLEMENT_CODE_KEY, 0))
 
-            self.software_upd_state = SoftwareUpdateState(json_object.get(DEVICE_SOFTWARE_UPDATE_ST_KEY, 0))
+            self.software_upd_state = SoftwareUpdateState(dish_object.get(DEVICE_SOFTWARE_UPDATE_ST_KEY, 0))
 
             return True
 

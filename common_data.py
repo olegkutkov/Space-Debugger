@@ -18,6 +18,7 @@
 #set expandtab
 #set tabstop=4
 
+STATUS_KEY = 'status'
 DEVICE_INFO_KEY = 'deviceInfo'
 DEVICE_INFO_ID_KEY = 'id'
 DEVICE_INFO_HW_VER_KEY = 'hardwareVersion'
