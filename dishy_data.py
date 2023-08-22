@@ -117,7 +117,7 @@ software_update_state_str = {
 
 ###
 
-class ActuatorState(Enum):
+class ActuatorStatus(Enum):
     UNKNOWN = 0
     HAS_ACTUATORS = 1
     NO_ACTUATORS = 2
@@ -126,10 +126,63 @@ class ActuatorState(Enum):
     def _missing_(cls, value):
         return cls.UNKNOWN
 
+actuator_status_str = {
+    ActuatorStatus.UNKNOWN: _('Unknown'),
+    ActuatorStatus.HAS_ACTUATORS: _('Has Actuators'),
+    ActuatorStatus.NO_ACTUATORS: _('No Actuators')
+}
+
+###
+
+class ActuatorState(Enum):
+    ACTUATOR_STATE_IDLE = 0
+    ACTUATOR_STATE_FULL_TILT = 1
+    ACTUATOR_STATE_ROTATE = 2
+    ACTUATOR_STATE_TILT = 3
+    ACTUATOR_STATE_UNWRAP_POSITIVE = 4
+    ACTUATOR_STATE_UNWRAP_NEGATIVE = 5
+    ACTUATOR_STATE_TILT_TO_STOWED = 6
+    ACTUATOR_STATE_FAULTED = 7
+    ACTUATOR_STATE_WAIT_TIL_STATIC = 8
+    ACTUATOR_STATE_DRIVE_TO_MOBILE_POSITION = 9
+    ACTUATOR_STATE_MOBILE_WAIT = 10
+
+    @classmethod
+    def _missing_(cls, value):
+        return cls.ACTUATOR_STATE_IDLE
+
 actuator_state_str = {
-    ActuatorState.UNKNOWN: _('Unknown'),
-    ActuatorState.HAS_ACTUATORS: _('Has Actuators'),
-    ActuatorState.NO_ACTUATORS: _('No Actuators')
+    ActuatorState.ACTUATOR_STATE_IDLE: _('Idle'),
+    ActuatorState.ACTUATOR_STATE_FULL_TILT: _('Full tilt'),
+    ActuatorState.ACTUATOR_STATE_ROTATE: _('Rotating'),
+    ActuatorState.ACTUATOR_STATE_TILT: _('Tilting'),
+    ActuatorState.ACTUATOR_STATE_UNWRAP_POSITIVE: _('Unwrapping (positive)'),
+    ActuatorState.ACTUATOR_STATE_UNWRAP_NEGATIVE: _('Unwrapping (negative)'),
+    ActuatorState.ACTUATOR_STATE_TILT_TO_STOWED: _('Tilt to stowed'),
+    ActuatorState.ACTUATOR_STATE_FAULTED: _('Faulted'),
+    ActuatorState.ACTUATOR_STATE_WAIT_TIL_STATIC: _('Waiting for static'),
+    ActuatorState.ACTUATOR_STATE_DRIVE_TO_MOBILE_POSITION: _('Driving to mobile position'),
+    ActuatorState.ACTUATOR_STATE_MOBILE_WAIT: _('Waiting for mobile')
+}
+
+###
+class AttitudeEstimationState(Enum):
+    FILTER_RESET = 0
+    FILTER_UNCONVERGED = 1
+    FILTER_CONVERGED = 2
+    FILTER_FAULTED = 3
+    FILTER_INVALID = 4
+
+    @classmethod
+    def _missing_(cls, value):
+        return cls.ACTUATOR_STATE_IDLE
+
+attitude_estimation_state_str = {
+    AttitudeEstimationState.FILTER_RESET: _('Reset'),
+    AttitudeEstimationState.FILTER_UNCONVERGED: _('Unconverged'),
+    AttitudeEstimationState.FILTER_CONVERGED: _('Converged'),
+    AttitudeEstimationState.FILTER_FAULTED: _('Faulted'),
+    AttitudeEstimationState.FILTER_INVALID: _('Invalid')
 }
 
 ###
@@ -243,6 +296,12 @@ DEVICE_READY_STATES_L1L2_KEY = 'l1l2'
 DEVICE_READY_STATES_XPHY_KEY = 'xphy'
 DEVICE_READY_STATES_AAP_KEY = 'aap'
 DEVICE_READY_STATES_RF_KEY = 'rf'
+
+DEVICE_ALIGNMENT_STATS_KEY = 'alignmentStats'
+DEVICE_ALIGNMENT_STATS_ACTUATOR_STATE_KEY = 'actuatorState'
+DEVICE_ALIGNMENT_STATS_TILT_ANGLE_DEG_KEY = 'tiltAngleDeg'
+DEVICE_ALIGNMENT_STATS_ATTITUDE_ESTIMATION_STATE_KEY = 'attitudeEstimationState'
+DEVICE_ALIGNMENT_STATS_ATTITUDE_UNCERTANITY_DEG_KEY = 'attitudeUncertaintyDeg'
 
 DEVICE_OUTAGE_KEY = 'outage'
 DEVICE_OUTAGE_CAUSE_KEY = 'cause'

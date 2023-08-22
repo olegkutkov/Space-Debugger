@@ -39,4 +39,5 @@ DEVICE_STATE_KEY = 'deviceState'
 DEVICE_UPTIME_KEY = 'uptimeS'
 DEVICE_ALERTS_KEY = 'alerts'
 
+DEVICE_CONFIG_KEY = 'config'
 

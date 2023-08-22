@@ -53,7 +53,9 @@ class Dishy(Entity):
             self.plugins.append(DishyNetwork(dish_object))
             self.plugins.append(DishyGPS(dish_object))
             self.plugins.append(DishyAntenna(dish_object))
+            self.plugins.append(DishyAlignmentStats(dish_object))
             self.plugins.append(ModuleAlerts(dish_object))
+            self.plugins.append(ModuleConfig(dish_object))
             self.plugins.append(Features(dish_object))
             self.plugins.append(DishyReadyStates(dish_object))
             self.plugins.append(DishyOutage(dish_object))
@@ -70,7 +72,7 @@ class Dishy(Entity):
     def get_device_image_file(self):
         ''' Special handle for the HP without actuators '''
         if self.hw_version == 'hp1_proto0' or self.hw_version == 'hp1_proto1':
-            if self.has_actuators == ActuatorState.UNKNOWN or self.has_actuators == ActuatorState.NO_ACTUATORS:
+            if self.has_actuators == ActuatorStatus.UNKNOWN or self.has_actuators == ActuatorStatus.NO_ACTUATORS:
                 return dev_images['hp_flat']
 
         if self.hw_version not in dev_images:
@@ -86,7 +88,7 @@ class Dishy(Entity):
             result[_('User terminal ID')] = self.device_id
             result[_('Development hardware')] = self.yes_or_no(self.is_developer)
             result[_('Starlink cohoused')] = self.yes_or_no(self.dishy_cohoused)
-            result[_('Actuators')] = actuator_state_str[self.has_actuators]
+            result[_('Actuators')] = actuator_status_str[self.has_actuators]
             result[_('Stow requested')] = self.yes_or_no(self.stow_requested)
 
             if self.mf_version != '':
@@ -140,7 +142,7 @@ class Dishy(Entity):
             self.timestamp = dish_object.get(DEVICE_TIMESTAMP_KEY, 0)
             self.uptime = device_state.get(DEVICE_UPTIME_KEY, 0)
 
-            self.has_actuators = ActuatorState(dish_object.get(DEVICE_HAS_ACTUATORS_KEY, 0))
+            self.has_actuators = ActuatorStatus(dish_object.get(DEVICE_HAS_ACTUATORS_KEY, 0))
             self.stow_requested = dish_object.get(DEVICE_STOW_REQUESTED_KEY, False)
             self.mobility_class = MobylityClass(dish_object.get(DEVICE_MOBILITY_CLASS_KEY, 0))
             self.class_of_serivce = ServiceClass(dish_object.get(DEVICE_CLASS_OF_SERVICE_KEY, 0))
@@ -220,6 +222,42 @@ class DishyGPS(EntityModule):
         ]
 
         return [ _('GPS'), data ]
+
+''' Alignment stats '''
+class DishyAlignmentStats(EntityModule):
+    def __init__(self, json_object):
+        super().__init__()
+
+        if DEVICE_ALIGNMENT_STATS_KEY not in json_object:
+            return None
+
+        self.stats = json_object[DEVICE_ALIGNMENT_STATS_KEY]
+
+        self.has_actuators = ActuatorStatus(self.stats.get(DEVICE_HAS_ACTUATORS_KEY, 0))
+        self.actuator_state = ActuatorState(self.stats.get(DEVICE_ALIGNMENT_STATS_ACTUATOR_STATE_KEY, 0))
+        self.tilt_angle = self.stats.get(DEVICE_ALIGNMENT_STATS_TILT_ANGLE_DEG_KEY, 0)
+        self.boresight_az_deg = self.stats.get(DEVICE_BORESIGHT_AZIMUTH_DEG_KEY, 0)
+        self.boresight_el_deg = self.stats.get(DEVICE_BORESIGHT_ELEVATION_DEG_KEY, 0)
+        self.attitude_est_state = AttitudeEstimationState(self.stats.get(DEVICE_ALIGNMENT_STATS_ATTITUDE_ESTIMATION_STATE_KEY, 0))
+        self.attitude_uncert = self.stats.get(DEVICE_ALIGNMENT_STATS_ATTITUDE_UNCERTANITY_DEG_KEY, 0)
+
+        self.data_ready = True
+
+    def get_name(self):
+        return 'Alignment'
+
+    def get_data(self):
+        data = [
+            [ _('Actuators'), actuator_status_str[self.has_actuators] ],
+            [ _('Actuator state'), actuator_state_str[self.actuator_state] ],
+            [ _('Tilt angle, deg'), self.tilt_angle ],
+            [ _('Panel boresight Azimuth angle, deg'), self.boresight_az_deg ],
+            [ _('Panel boresight Elevation agngle, deg'), self.boresight_el_deg ],
+            [ _('Attitude Estimation State'), attitude_estimation_state_str[self.attitude_est_state]],
+            [ _('Attitude Uncertainty, deg'), self.attitude_uncert ]
+        ]
+
+        return [ _('Alignment'), data ]
 
 ''' Basic antenna info '''
 class DishyAntenna(EntityModule):

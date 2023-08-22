@@ -22,6 +22,7 @@ import json
 import gettext
 from common_data import DEVICE_ALERTS_KEY
 from common_data import DEVICE_FEATURES_KEY
+from common_data import DEVICE_CONFIG_KEY
 _ = gettext.gettext
 
 ''' Basic class for all entities like Dishy, Router, Local device '''
@@ -122,6 +123,35 @@ class ModuleAlerts(EntityModule):
             return [ _('Alerts'), [[' ', _('No alerts')]] ]
 
         return [ _('Alerts'), self.data ]
+
+class ModuleConfig(EntityModule):
+    def __init__(self, json_object):
+        super().__init__()
+
+        self.no_config = False
+
+        if DEVICE_CONFIG_KEY not in json_object:
+            self.no_config = True
+
+        self.data = []
+        config_data = json_object[DEVICE_CONFIG_KEY]
+
+        for cfg in config_data:
+            if config_data[cfg]:
+                self.words = camel_case_split(cfg)
+                self.data.append([' ', words_to_str(self.words)])
+
+        self.no_config = not len(self.data)
+        self.data_ready = True
+
+    def get_name(self):
+        return 'Config'
+
+    def get_data(self):
+        if self.no_config:
+            return [ _('Config'), [[' ', _('No config exposed')]] ]
+
+        return [ _('Config'), self.data ]
 
 class Features(EntityModule):
     def __init__(self, json_object):
