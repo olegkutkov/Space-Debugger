@@ -103,14 +103,15 @@ class ModuleAlerts(EntityModule):
             self.no_alerts = True
 
         self.data = []
-        alerts_data = json_object[DEVICE_ALERTS_KEY]
+        alerts_data = json_object.get(DEVICE_ALERTS_KEY)
 
         self.words = []
  
-        for alert in alerts_data:
-           if alerts_data[alert]:
-                self.words = camel_case_split(alert) 
-                self.data.append([' ', words_to_str(self.words)])
+        if alerts_data is not None:
+            for alert in alerts_data:
+               if alerts_data[alert]:
+                    self.words = camel_case_split(alert)
+                    self.data.append([' ', words_to_str(self.words)])
 
         self.no_alerts = not len(self.data)
         self.data_ready = True
@@ -134,12 +135,13 @@ class ModuleConfig(EntityModule):
             self.no_config = True
 
         self.data = []
-        config_data = json_object[DEVICE_CONFIG_KEY]
+        config_data = json_object.get(DEVICE_CONFIG_KEY)
 
-        for cfg in config_data:
-            if config_data[cfg]:
-                self.words = camel_case_split(cfg)
-                self.data.append([' ', words_to_str(self.words)])
+        if config_data is not None:
+            for cfg in config_data:
+                if config_data[cfg]:
+                    self.words = camel_case_split(cfg)
+                    self.data.append([' ', words_to_str(self.words)])
 
         self.no_config = not len(self.data)
         self.data_ready = True
@@ -163,12 +165,13 @@ class Features(EntityModule):
             self.no_features = True
 
         self.data = []
-        features_data = json_object[DEVICE_FEATURES_KEY]
+        features_data = json_object.get(DEVICE_FEATURES_KEY)
 
-        for feature in features_data:
-            if features_data[feature]:
-                self.words = camel_case_split(feature)
-                self.data.append([' ', words_to_str(self.words)])
+        if features_data is not None:
+            for feature in features_data:
+                if features_data[feature]:
+                    self.words = camel_case_split(feature)
+                    self.data.append([' ', words_to_str(self.words)])
 
         self.no_features = not len(self.data)
         self.data_ready = True
