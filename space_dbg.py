@@ -188,7 +188,16 @@ class SpaceDebuggerMain(tk.Tk):
         param_label_txt = param + ":" if param[0] != ' ' else param
         param_label = tk.Label(master=frame, text=param_label_txt)
         param_label.grid(sticky="W", row = rc, column=0, padx=param_px, pady=param_py)
-        value_label = tk.Label(master=frame, text=value_label_txt, cursor="hand1")
+
+        value_fg = None
+
+        if isinstance(value_label_txt, str):
+            if ('No ' in value_label_txt or 'No' == value_label_txt):
+                value_fg = '#5400ff'
+            elif ('Yes' == value_label_txt or 'Good' == value_label_txt or 'Okay' == value_label_txt):
+                value_fg = '#007107'
+
+        value_label = tk.Label(master=frame, text=value_label_txt, cursor="hand1", fg=value_fg)
         value_label.grid(sticky="W", row = rc, column=1, padx=value_px, pady=value_py)
         value_label.bind("<Button-1>", self.copy_on_click)
 
