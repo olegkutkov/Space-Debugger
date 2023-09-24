@@ -194,6 +194,7 @@ class DisablementCode(Enum):
     TOO_FAR_FROM_SERVICE_ADDRESS = 3
     IN_OCEAN = 4
     INVALID_COUNTRY = 5
+    BLOCKED_COUNTRY = 6
 
     @classmethod
     def _missing_(cls, value):
@@ -205,7 +206,8 @@ disablement_code_str = {
     DisablementCode.NO_ACTIVE_ACCOUNT: _('No active account'),
     DisablementCode.TOO_FAR_FROM_SERVICE_ADDRESS: _('Too far from service address'),
     DisablementCode.IN_OCEAN: _('In ocean'),
-    DisablementCode.INVALID_COUNTRY: _('Invalid country')
+    DisablementCode.INVALID_COUNTRY: _('Invalid country'),
+    DisablementCode.BLOCKED_COUNTRY: _('Blocked country')
 }
 
 ###
