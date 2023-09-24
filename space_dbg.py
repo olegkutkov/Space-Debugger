@@ -158,6 +158,17 @@ class SpaceDebuggerMain(tk.Tk):
                                     cv.create_image((0,0), anchor=tk.NW, image=self.subtab_images[subtab_name])
 
                                     cv.bind("<Button-1>", lambda event, arg=subtab_param_value: self.show_image_mem(arg))
+                            elif subtab_param_name == 'init_durations':
+                                if subtab_param_value is not None:
+                                    idc = 0
+
+                                    init_durs_frame = ttk.Frame(subtab_frame)
+
+                                    for init_dur_entry in subtab_param_value:
+                                        self.display_params(init_durs_frame, idc, init_dur_entry[0], init_dur_entry[1], 0, 1, 5, 0)
+                                        idc = idc + 1
+
+                                    init_durs_frame.grid(sticky="NE", row=0, column=2, rowspan=len(subtab_params) - 1)
                             else:
                                 self.display_params(subtab_frame, irc, subtab_param_name, subtab_param_value, 0, 1, 15, 1)
 

@@ -292,6 +292,8 @@ class DishyReadyStates(EntityModule):
         if DEVICE_READY_STATES_KEY not in json_object:
             return None
 
+        self.init_durations = None
+
         ready_states = json_object[DEVICE_READY_STATES_KEY]
 
         self.cady = ready_states.get(DEVICE_READY_STATES_CADY_KEY, False)
@@ -300,6 +302,22 @@ class DishyReadyStates(EntityModule):
         self.xphy = ready_states.get(DEVICE_READY_STATES_XPHY_KEY, False)
         self.aap = ready_states.get(DEVICE_READY_STATES_AAP_KEY, False)
         self.rf = ready_states.get(DEVICE_READY_STATES_RF_KEY, False)
+
+        if DEVICE_INIT_DURATION_SEC_KEY in json_object:
+            init_dur = json_object[DEVICE_INIT_DURATION_SEC_KEY]
+
+            self.init_durations = [
+                [ _('RF front end ready'), str(init_dur.get(DEVICE_INIT_RF_READY_KEY, 0)) + ' sec' ],
+                [ _('GPS fixed (valid)'), str(init_dur.get(DEVICE_INIT_GPS_VALID_KEY, 0)) + ' sec' ],
+                [ _('Satellite signal detected'), str(init_dur.get(DEVICE_INIT_BURST_DETECTED_KEY, 0)) + ' sec' ],
+                [ _('Initial network entry'), str(init_dur.get(DEVICE_INIT_INITIAL_NETWORK_ENTRY_KEY, 0)) + ' sec' ],
+                [ _('First control plane'), str(init_dur.get(DEVICE_INIT_FIRST_CONTROL_PLANE_KEY, 0)) + ' sec' ],
+                [ _('Network schedule'), str(init_dur.get(DEVICE_INIT_NETWORK_SCHEDULE_KEY, 0)) + ' sec' ],
+                [ _('First PoP ping'), str(init_dur.get(DEVICE_INIT_FIRST_POP_PING_KEY, 0)) + ' sec' ],
+                [ _('Attitude initialized'), str(init_dur.get(DEVICE_INIT_ATTITUDE_INITIALIZATION_KEY, 0)) + ' sec' ],
+                [ _('Extended Kalman filter converged'), str(init_dur.get(DEVICE_INIT_EKF_CONVERGED_KEY, 0)) + ' sec' ],
+                [ _('Stable connection'), str(init_dur.get(DEVICE_INIT_STABLE_CONNECTION_KEY, 0)) + ' sec' ]
+            ]
 
         self.data_ready = True
 
@@ -313,7 +331,8 @@ class DishyReadyStates(EntityModule):
             [ _('Modem L1L2'), self.yes_or_no(self.l1l2) ],
             [ _('Xilinx XPHY interface'), self.yes_or_no(self.xphy) ],
             [ _('Digital beamformers'), self.yes_or_no(self.aap) ],
-            [ _('RF front end'), self.yes_or_no(self.rf) ]
+            [ _('RF front end'), self.yes_or_no(self.rf) ],
+            [ 'init_durations', self.init_durations ]
         ]
 
         return [ _('Ready states'), data ]
