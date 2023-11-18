@@ -238,6 +238,8 @@ class DishyAlignmentStats(EntityModule):
         self.tilt_angle = self.stats.get(DEVICE_ALIGNMENT_STATS_TILT_ANGLE_DEG_KEY, 0)
         self.boresight_az_deg = self.stats.get(DEVICE_BORESIGHT_AZIMUTH_DEG_KEY, 0)
         self.boresight_el_deg = self.stats.get(DEVICE_BORESIGHT_ELEVATION_DEG_KEY, 0)
+        self.desired_boresight_azimuth_deg = self.stats.get(DEVICE_DESIRED_BORESIGHT_AZ_DEG_KEY, 0)
+        self.desired_boresight_elevation_deg = self.stats.get(DEVICE_DESIRED_BORESIGHT_EL_DEG_KEY, 0)
         self.attitude_est_state = AttitudeEstimationState(self.stats.get(DEVICE_ALIGNMENT_STATS_ATTITUDE_ESTIMATION_STATE_KEY, 0))
         self.attitude_uncert = self.stats.get(DEVICE_ALIGNMENT_STATS_ATTITUDE_UNCERTANITY_DEG_KEY, 0)
 
@@ -253,6 +255,8 @@ class DishyAlignmentStats(EntityModule):
             [ _('Tilt angle, deg'), self.tilt_angle ],
             [ _('Panel boresight Azimuth angle, deg'), self.boresight_az_deg ],
             [ _('Panel boresight Elevation agngle, deg'), self.boresight_el_deg ],
+            [ _('Panel desired boresight Azimuth angle, deg'), self.desired_boresight_azimuth_deg],
+            [ _('Panel desired boresight Elevation angle, deg'), self.desired_boresight_elevation_deg],
             [ _('Attitude Estimation State'), attitude_estimation_state_str[self.attitude_est_state]],
             [ _('Attitude Uncertainty, deg'), self.attitude_uncert ]
         ]
