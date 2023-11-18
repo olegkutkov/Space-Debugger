@@ -82,8 +82,11 @@ class Dishy(Entity):
 
     ''' Return readable and formatted data '''
     def get_readable_params(self, result):
+            firmware_unix_time = datetime.datetime.utcfromtimestamp(self.gen_number)
+
             result[_('Hardware revision')] = self.hw_version
             result[_('Software version')] = self.sw_version
+            result[_('Software build date (UTC)')] = firmware_unix_time.strftime('%Y %B %d  %H:%M:%S')
             result[_('Software update state')] = software_update_state_str[self.software_upd_state]
             result[_('User terminal ID')] = self.device_id
             result[_('Development hardware')] = self.yes_or_no(self.is_developer)
@@ -131,6 +134,7 @@ class Dishy(Entity):
             self.sw_version = device_info.get(DEVICE_INFO_SW_VER_KEY, _('Unknown'))
             self.hw_version = device_info.get(DEVICE_INFO_HW_VER_KEY, _('Unknown'))
             self.mf_version = device_info.get(DEVICE_INFO_MF_VER_KEY, _('Unknown'))
+            self.gen_number = device_info.get(DEVICE_INFO_GEN_NUMBER , 0)
             self.country_code = device_info.get(DEVICE_INFO_CC_KEY, _('Unknown'))
             self.utc_off_hours = device_info.get(DEVICE_INFO_UTC_OFF_KEY, 0)
             self.sw_parts_eq = device_info.get(DEVICE_INFO_SW_PARTS_EQ_KEY, False)
