@@ -129,29 +129,40 @@ class DeviceNetwork(EntityModule):
             return None
 
         network = app_object[DEVICE_NETWORK_KEY]
-        network_info = app_object[DEVICE_NETWORK_KEY][DEVICE_NETWORK_NETINFO_KEY]
-        network_info_details = network_info.get(DEVICE_NETWORK_NETINFO_DETAILS_KEY, None)
+        network_info = network.get(DEVICE_NETWORK_NETINFO_KEY, None)
 
         self.is_vpn = network.get(DEVICE_NETWORK_VPN_KEY, False)
         self.gateway_ip = network.get(DEVICE_NETWORK_GATEWAY_IP_ADDR_KEY, '0.0.0.0')
         self.public_ip = network.get(DEVICE_NETWORK_PUBLIC_IP_KEY, '0.0.0.0')
         self.is_starlink_conn = network.get(DEVICE_NETWORK_IS_STARLINK_KEY, False)
 
-        self.net_type = network_info.get(DEVICE_NETWORK_NETINFO_TYPE_KEY, 'wifi')
-        self.is_bypass_mode = not network_info.get(DEVICE_NETWORK_NETINFO_WIFI_ENABLED_KEY, True)
-        self.is_connected = network_info.get(DEVICE_NETWORK_NETINFO_IS_CONNECTED_KEY, False)
-        self.is_internet_available = network_info.get(DEVICE_NETWORK_IS_INTERNET_REACHABLE, False)
+        if network_info is not None:
+            network_info_details = network_info.get(DEVICE_NETWORK_NETINFO_DETAILS_KEY, None)
 
-        if network_info_details is not None:
-            self.ip_addr = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_IP_ADDR_KEY, '0.0.0.0')
-            self.local_link_speed = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_LINK_SPEED_KEY, 0)
-            self.local_link_speed =  str(self.local_link_speed) + ' Mbps'
+            self.net_type = network_info.get(DEVICE_NETWORK_NETINFO_TYPE_KEY, 'wifi')
+            self.is_bypass_mode = not network_info.get(DEVICE_NETWORK_NETINFO_WIFI_ENABLED_KEY, True)
+            self.is_connected = network_info.get(DEVICE_NETWORK_NETINFO_IS_CONNECTED_KEY, False)
+            self.is_internet_available = network_info.get(DEVICE_NETWORK_IS_INTERNET_REACHABLE, False)
 
-            self.wifi_link_freq = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_FREQ_KEY, 0)
-            self.wifi_ssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_SSID_KEY, '')
-            self.wifi_bssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_BSSID_KEY, '')
-            self.wifi_signal_level = network_info_details.get(DEVICE_NETWORK_NETINFO_DTAILS_SIGNAL_LEVEL_KEY, 150)
+            if network_info_details is not None:
+                self.ip_addr = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_IP_ADDR_KEY, '0.0.0.0')
+                self.local_link_speed = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_LINK_SPEED_KEY, 0)
+                self.local_link_speed =  str(self.local_link_speed) + ' Mbps'
+
+                self.wifi_link_freq = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_FREQ_KEY, 0)
+                self.wifi_ssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_SSID_KEY, '')
+                self.wifi_bssid = network_info_details.get(DEVICE_NETWORK_NETINFO_DETAILS_BSSID_KEY, '')
+                self.wifi_signal_level = network_info_details.get(DEVICE_NETWORK_NETINFO_DTAILS_SIGNAL_LEVEL_KEY, 150)
+            else:
+                self.ip_addr = ""
+                self.local_link_speed = ""
+                self.local_link_speed = ""
+                self.wifi_link_freq = ""
+                self.wifi_ssid = ""
+                self.wifi_bssid = ""
+                self.wifi_signal_level = ""
         else:
+            self.net_type = network.get(DEVICE_NETWORK_CONNECTION_TYPE_KEY, 'WIFI')
             self.ip_addr = ""
             self.local_link_speed = ""
             self.local_link_speed = ""
@@ -159,6 +170,9 @@ class DeviceNetwork(EntityModule):
             self.wifi_ssid = ""
             self.wifi_bssid = ""
             self.wifi_signal_level = ""
+            self.is_connected = "Yes"
+            self.is_internet_available = ""
+            self.is_bypass_mode = ""
 
         self.data_ready = True
 
