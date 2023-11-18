@@ -38,6 +38,11 @@ class BootReason(Enum):
     COMMAND = 3
     SOFTWARE_UPDATE = 4
     CONFIG_UPDATE = 5
+    UPTIME_FDIR = 6
+    REPEATER_FDIR = 7
+    AVIATION_ETH_WAN_FDIR = 8
+    KERNEL_PANIC = 9
+    AVIATION_5M_OUTAGE_FDIR = 10
 
     @classmethod
     def _missing_(cls, value):
