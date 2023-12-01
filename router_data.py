@@ -54,7 +54,11 @@ boot_reason_str = {
     BootReason.POWER_CYCLE: _('Power cycle'),
     BootReason.COMMAND: _('Command'),
     BootReason.SOFTWARE_UPDATE: _('Software update'),
-    BootReason.CONFIG_UPDATE: _('Configuration update')
+    BootReason.CONFIG_UPDATE: _('Configuration update'),
+    BootReason.UPTIME_FDIR: _('Uptime fault detection and isolation'),
+    BootReason.AVIATION_ETH_WAN_FDIR: _('Aviation fault detection and isolation'),
+    BootReason.KERNEL_PANIC: _('Kernel panic'),
+    BootReason.AVIATION_5M_OUTAGE_FDIR: _('Aviation 5 min fault detection and isolation')
 }
 
 ROUTER_KEY = 'router'
