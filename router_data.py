@@ -28,7 +28,8 @@ _ = gettext.gettext
 
 dev_images = {
 	'v1': 'resources/devices/router_v1.png',
-	'v2': 'resources/devices/router_v2.png'
+	'v2': 'resources/devices/router_v2.png',
+	'v3': 'resources/devices/router_v3.png'
 }
 
 class BootReason(Enum):
