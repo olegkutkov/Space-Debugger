@@ -198,6 +198,7 @@ class DisablementCode(Enum):
     IN_OCEAN = 4
     INVALID_COUNTRY = 5
     BLOCKED_COUNTRY = 6
+    DATA_OVERAGE_SANDBOX_POLICY = 7
 
     @classmethod
     def _missing_(cls, value):
@@ -210,7 +211,8 @@ disablement_code_str = {
     DisablementCode.TOO_FAR_FROM_SERVICE_ADDRESS: _('Too far from service address'),
     DisablementCode.IN_OCEAN: _('In ocean'),
     DisablementCode.INVALID_COUNTRY: _('Invalid country'),
-    DisablementCode.BLOCKED_COUNTRY: _('Blocked country')
+    DisablementCode.BLOCKED_COUNTRY: _('Blocked country'),
+    DisablementCode.DATA_OVERAGE_SANDBOX_POLICY: _('Data overage sandbox policy')
 }
 
 ###
