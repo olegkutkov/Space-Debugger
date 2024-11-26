@@ -44,7 +44,10 @@ dev_images = {
     'rev4_proto3': 'resources/devices/dishy_v4.png',
     'rev4_proto4': 'resources/devices/dishy_v4.png',
     'rev4_prod1': 'resources/devices/dishy_v4.png',
+    'rev4_prod2': 'resources/devices/dishy_v4.png',
+    'rev4_prod3': 'resources/devices/dishy_v4.png',
     'mini1_prod1': 'resources/devices/dishy_mini.png',
+    'mini1_prod2': 'resources/devices/dishy_mini.png',
     'rev_never_gonna_give_you_up': 'resources/devices/entity_astl.png',
     'unknown': 'resources/devices/dishy_unknown.png'
 }
