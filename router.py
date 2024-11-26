@@ -34,9 +34,23 @@ class Router(Entity):
 
         if STATUS_KEY in json_object:
             router_object = json_object[STATUS_KEY]
+        elif RAW_STATUS_KEY in json_object:
+            router_object = json_object[RAW_STATUS_KEY]
 
-        super().__init__('Router', router_object.get(ROUTER_REACHABLE_KEY, False), \
-                                    router_object.get(ROUTER_CLOUD_ACCESS_KEY, False))
+        router_reachable = False
+        router_cloud_access = False
+
+        if ROUTER_REACHABLE_KEY in json_object:
+          router_reachable = json_object[ROUTER_REACHABLE_KEY]
+        elif ROUTER_REACHABLE_KEY in router_object:
+          router_reachable = router_object[ROUTER_REACHABLE_KEY]
+
+        if ROUTER_CLOUD_ACCESS_KEY in json_object:
+          router_cloud_access = json_object[ROUTER_CLOUD_ACCESS_KEY]
+        elif ROUTER_CLOUD_ACCESS_KEY in router_object:
+          router_cloud_access = router_object[ROUTER_CLOUD_ACCESS_KEY]
+
+        super().__init__('Router', router_reachable, router_cloud_access)
 
         if self.reachable and not self.parse_device_info(router_object):
             raise Exception(_('Failed to load Router Device Info'))
@@ -128,7 +142,12 @@ class RouterNetwork(EntityModule):
         super().__init__()
 
         self.wan_ipv4 = json_object.get(ROUTER_WAN_IPV4_ADDRESS_KEY, "0.0.0.0")
-        self.wan_ipv6 = json_object.get(ROUTER_WAN_IPV6_ADDRESS_LIST_KEY, [])
+
+        if ROUTER_WAN_IPV6_ADDRESS_LIST_KEY in json_object:
+            self.wan_ipv6 = json_object.get(ROUTER_WAN_IPV6_ADDRESS_LIST_KEY, [])
+        elif ROUTER_WAN_IPV6_ADRESSES_KEY in json_object:
+            self.wan_ipv6 = json_object.get(ROUTER_WAN_IPV6_ADRESSES_KEY, [])
+
         self.dhcp_servers = json_object.get(ROUTER_WAN_DHPS_SERVERS_LIST_KEY, [])
         self.ping_drop_rate = json_object.get(ROUTER_PING_DROP_RATE_KEY, 0)
         self.dish_ping_drop_rate = json_object.get(ROUTER_DISH_PING_DROP_RATE_KEY, 0)

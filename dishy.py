@@ -39,9 +39,28 @@ class Dishy(Entity):
 
         if STATUS_KEY in json_object:
           dish_object = json_object[STATUS_KEY]
+        elif RAW_STATUS_KEY in json_object:
+          dish_object = json_object[RAW_STATUS_KEY]
 
-        super().__init__('Dish', dish_object.get(DISH_REACHABLE_KEY, False), \
-                                dish_object.get(DISH_CLOUD_ACCESS_KEY, False))
+        dish_reachable = False
+        dish_cloud_access = False
+
+        if DISH_REACHABLE_KEY in json_object:
+          dish_reachable = json_object[DISH_REACHABLE_KEY]
+        elif DISH_REACHABLE_KEY in dish_object:
+          dish_reachable = dish_object[DISH_REACHABLE_KEY]
+
+        if DISH_CLOUD_ACCESS_KEY in json_object:
+          dish_cloud_access = json_object[DISH_CLOUD_ACCESS_KEY]
+        elif DISH_CLOUD_ACCESS_KEY in dish_object:
+          dish_cloud_access = dish_object[DISH_CLOUD_ACCESS_KEY]
+
+        if DEVICE_HARDWARE_VERSION_KEY in json_object:
+          self.hardware_version = json_object[DEVICE_HARDWARE_VERSION_KEY]
+        elif DEVICE_HARDWARE_VERSION_KEY in dish_object:
+          self.hardware_version = dish_object[DEVICE_HARDWARE_VERSION_KEY]
+
+        super().__init__('Dish', dish_reachable, dish_cloud_access)
 
         if self.reachable and not self.parse_device_info(dish_object):
             raise Exception(_('Failed to load Dish Device Info'))
@@ -82,15 +101,21 @@ class Dishy(Entity):
 
     ''' Return readable and formatted data '''
     def get_readable_params(self, result):
-            firmware_unix_time = datetime.datetime.utcfromtimestamp(self.gen_number)
+            firmware_unix_time = datetime.datetime.utcfromtimestamp(int(self.gen_number))
 
             result[_('Hardware revision')] = self.hw_version
+
+            if hasattr(self, 'hardware_version'):
+              result[_('Hardware Version')] = self.hardware_version
+
+            result[_('Board revision')] = self.hw_board_rev
             result[_('Software version')] = self.sw_version
+            result[_('Software Build ID')] = self.sw_build_id
             result[_('Software build date (UTC)')] = firmware_unix_time.strftime('%Y %B %d  %H:%M:%S')
             result[_('Software update state')] = software_update_state_str[self.software_upd_state]
             result[_('User terminal ID')] = self.device_id
             result[_('Development hardware')] = self.yes_or_no(self.is_developer)
-            result[_('Starlink cohoused')] = self.yes_or_no(self.dishy_cohoused)
+#            result[_('Starlink cohoused')] = self.yes_or_no(self.dishy_cohoused)
             result[_('Actuators')] = actuator_status_str[self.has_actuators]
             result[_('Stow requested')] = self.yes_or_no(self.stow_requested)
 
@@ -132,7 +157,9 @@ class Dishy(Entity):
 
             self.device_id = device_info.get(DEVICE_INFO_ID_KEY, _('Unknown'))
             self.sw_version = device_info.get(DEVICE_INFO_SW_VER_KEY, _('Unknown'))
+            self.sw_build_id = device_info.get(DEVICE_INFO_SW_BUILD_ID_KEY, _('-'))
             self.hw_version = device_info.get(DEVICE_INFO_HW_VER_KEY, _('Unknown'))
+            self.hw_board_rev = device_info.get(DEVICE_INFO_HW_BOARD_REV_KEY, 0)
             self.mf_version = device_info.get(DEVICE_INFO_MF_VER_KEY, _('Unknown'))
             self.gen_number = device_info.get(DEVICE_INFO_GEN_NUMBER , 0)
             self.country_code = device_info.get(DEVICE_INFO_CC_KEY, _('Unknown'))
@@ -306,7 +333,7 @@ class DishyReadyStates(EntityModule):
 
         self.cady = ready_states.get(DEVICE_READY_STATES_CADY_KEY, False)
         self.scp = ready_states.get(DEVICE_READY_STATES_SCP_KEY, False)
-        self.l1l2 = ready_states.get(DEVICE_READY_STATES_L1L2_KEY, False)
+        self.l1l2 = ready_states.get(DEVICE_READY_STATES_L1L2_KEY, False) or ready_states.get(DEVICE_READY_STATES_L1L2_KEY_2, False)
         self.xphy = ready_states.get(DEVICE_READY_STATES_XPHY_KEY, False)
         self.aap = ready_states.get(DEVICE_READY_STATES_AAP_KEY, False)
         self.rf = ready_states.get(DEVICE_READY_STATES_RF_KEY, False)

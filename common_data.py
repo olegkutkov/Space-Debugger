@@ -19,10 +19,15 @@
 #set tabstop=4
 
 STATUS_KEY = 'status'
+RAW_STATUS_KEY = 'rawStatus'
+
 DEVICE_INFO_KEY = 'deviceInfo'
 DEVICE_INFO_ID_KEY = 'id'
 DEVICE_INFO_HW_VER_KEY = 'hardwareVersion'
+DEVICE_INFO_HW_BOARD_REV_KEY = 'boardRev'
+DEVICE_HARDWARE_VERSION_KEY = 'hardwareVersion'
 DEVICE_INFO_SW_VER_KEY = 'softwareVersion'
+DEVICE_INFO_SW_BUILD_ID_KEY = 'buildId'
 DEVICE_INFO_MF_VER_KEY = 'manufacturedVersion'
 DEVICE_INFO_GEN_NUMBER = 'generationNumber'
 DEVICE_INFO_CC_KEY = 'countryCode'
