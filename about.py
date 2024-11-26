@@ -26,7 +26,7 @@ _ = gettext.gettext
 #
 
 PROGRAM_NAME = 'Space Debugger'
-PROGRAM_VERSION = '0.6'
+PROGRAM_VERSION = '0.7'
 
 PROGRAM_AUTHOR = 'Oleg Kutkov'
 PROGRAM_EMAIL = '<contact@olegkutkov.me>'
